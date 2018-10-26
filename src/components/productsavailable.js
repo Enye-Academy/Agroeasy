@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Container, Col, Row } from 'reactstrap';
 import './home.css';
-import Spices from './stuffs/spices';
-import FoodItems from './stuffs/fooditems';
-import Livestockpoultry from './stuffs/livestockpoultry';
-import FruitsAndVegetables from './stuffs/fruitandvegetables';
+import Spices from './grouped-items/spices';
+import FoodItems from './grouped-items/fooditems';
+import Livestockpoultry from './grouped-items/livestockpoultry';
+import FruitsAndVegetables from './grouped-items/fruitandvegetables';
 
 /*
 List of items according to groups

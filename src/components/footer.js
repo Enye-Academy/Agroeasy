@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import './home.css';
 import ProductsAvailable from './productsavailable';
+import Row1 from './rows/row1';
 
+
+
+const Image = {
+  
+  title: "My poultry fARM"
+}
 /*
 This will contain the productsavailable components and other
 neccessary info
 */
 export default class  Footer extends Component {
-
+  
   render () {
+    const names = ['obinna', 'Ijeoma', 'Chidi'];
     return (
             <div className="footer">
                                 <br/><br/><br />
@@ -21,7 +29,7 @@ export default class  Footer extends Component {
                                <Row> 
                                      <Col md={12}>  
                                       <h6>All rights reserved, Copyright © 2018 Agroeasy</h6>
-                                        <br />
+                                      <Row1 />
                                    </Col>
                                </Row>
                          </Container>

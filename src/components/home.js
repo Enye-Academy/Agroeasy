@@ -1,8 +1,6 @@
 import React from 'react';
 import './bootstrap.min.css';
-import Button from '@material-ui/core/Button';
-import { InputGroup, InputGroupAddon, Jumbotron, Col, Input, Row, Container
-} from 'reactstrap';
+import { InputGroup, InputGroupAddon, Jumbotron, Col, Input, Row, Button, Container } from 'reactstrap';
 import './home.css';
 import Footer from './footer';
 import Navibar from './Navibar';
@@ -30,12 +28,16 @@ are exported to and displayed
                           </Col>
                        </Row>
                        <br/>
-                       <Container style={{width: '550px', textAlign: 'center'}}>
-                             <InputGroup>
+                       <Container style={{width: '355px', textAlign: 'center'}}>
+                          <Row>
+                              <Col xs={12}>
+                                <InputGroup>
                                   <InputGroupAddon addonType="prepend">@</InputGroupAddon>
                                   <Input placeholder="search" />
-                                  <Button variant="contained" color="primary" onClick={this.search}>Ok</Button>
-                             </InputGroup>
+                                  <Button variant="contained" color="primary" onClick={this.search}>ok</Button>;
+                               </InputGroup>
+                             </Col>
+                          </Row>
                        </Container>
                    </Jumbotron>
                    <ListItems />

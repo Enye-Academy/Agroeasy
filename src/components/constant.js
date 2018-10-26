@@ -32,9 +32,3 @@ export const Ginger = "/ginger/";
 export const Garlic = "/garlic/";
 export const Pepper = "/pepper/";
 export const Curry = "/curry/";
-
-
-//from folder components/items-detailed
-export const Eggcrates = "/eggcrates/"
-export const Palmoil = "/palmoil/"
-export const Onionbag = "/onionbags/"
