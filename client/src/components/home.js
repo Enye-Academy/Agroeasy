@@ -6,6 +6,8 @@ import './home.css';
 import Footer from './footer';
 import Navibar from './Navibar';
 import AnotherList from './anotherlist';
+import ReduxApp from './ReduxApp';
+
 
 /*
 this is the home page, where sub-components (the Navibar, AnotherList and footer components)
@@ -39,7 +41,9 @@ are exported to and displayed
                    </Jumbotron>
                    <AnotherList />
                    <hr />
+                   
                    <Footer />
+                   <ReduxApp />
             </div>
 
         );
