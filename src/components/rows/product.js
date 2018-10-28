@@ -14,7 +14,7 @@ class Products extends React.Component {
     };
 
     this.toggle = this.toggle.bind(this);
-  }
+  }       
 
   toggle() {
     this.setState({
@@ -25,7 +25,7 @@ class Products extends React.Component {
   render() {
     return (
       <div>
-           <Image src={this.props.pix} alt="#" style={{width: '200px', height: '190px'}} onClick={this.toggle}  thumbnail/>
+           <Image src={this.props.pix} alt="#" style={{width: '200px', height: '110px'}} onClick={this.toggle}  thumbnail/>
               <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                   <ModalHeader toggle={this.toggle}>{this.props.title}</ModalHeader>
                   <ModalBody style={{width: "100%", height: "30%"}}>
@@ -37,7 +37,7 @@ class Products extends React.Component {
                                    <div>
                                        <h6 style={{marginTop: '17px'}}><b>Location:</b>{this.props.location}</h6>
                                        
-                                       <h6 style={{marginTop: '17px'}}><b>Cost:</b> {this.props.tag}</h6>
+                                       <h6 style={{marginTop: '17px'}}><b>Cost:</b> &nbsp; {this.props.tag}</h6>
                                        
                                        <h6 style={{marginTop: '17px'}}><b>Quantity available:</b>{this.props.quantity}</h6>
                                        

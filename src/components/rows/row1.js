@@ -8,10 +8,9 @@ import Products from './product';
 /*this the first on component anotherlist.js */
 export default class Row1 extends Component {
 	render() {
-       
 		return (
-            <Container>
-                  <Row>
+            <Container fluid>
+                  <Row style={{display: 'inlineblock'}}>
                       <Col md={3}>
                              <Products title="Crates of eggs" pix={"/images/egg-crates.jpeg"} tag="#1,200" phone="" quantity=""
                               email="myemail@example.com" location="Gawu Babangida, Gurara, Niger State"
@@ -28,7 +27,7 @@ export default class Row1 extends Component {
                            />
                      </Col>
                      <Col md={3}>
-                           <Products title="Heritage vegetable Oil" pix={"/images/Groundnut Oil.jpeg"} tag="#1,500" phone="" quantity=""
+                           <Products title="Heritage Oil" pix={"/images/Groundnut Oil.jpeg"} tag="#1,500" phone="" quantity=""
                             email="myemail@example.com" location=""
                            />
                  </Col>

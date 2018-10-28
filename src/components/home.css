@@ -12,9 +12,15 @@
 .details {
   display: inline-block;
   list-style: none;
-  font-size: 9px;
+  font-size: 15px;
   color: Grey;
-  text-align: left;
+}
+
+ ul li {
+  display: block;
+  list-style: none;
+  font-size: 14px;
+  color: gray;
 }
 
 .button {

@@ -34,7 +34,7 @@ are exported to and displayed
                                 <InputGroup>
                                   <InputGroupAddon addonType="prepend">@</InputGroupAddon>
                                   <Input placeholder="search" />
-                                  <Button variant="contained" color="primary" onClick={this.search}>ok</Button>;
+                                  <Button variant="contained" color="primary" onClick={this.search}>ok</Button>
                                </InputGroup>
                              </Col>
                           </Row>
