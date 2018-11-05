@@ -6,8 +6,8 @@ import './home.css';
 import Footer from './footer';
 import Navibar from './Navibar';
 import AnotherList from './anotherlist';
-import ReduxApp from './ReduxApp';
-
+import ListProducers from './FetchTrial';
+ 
 
 /*
 this is the home page, where sub-components (the Navibar, AnotherList and footer components)
@@ -43,7 +43,14 @@ are exported to and displayed
                    <hr />
                    
                    <Footer />
-                   <ReduxApp />
+                   <table style={{ border: '2px solid red', borderCollapse: 'collapse', width: '100%' }}>
+                    <tr>
+                        <th style={{ border: '2px solid red', height: '50px' }}> FIRST NAME </th>
+                        <th style={{ border: '2px solid red', height: '50px' }}> LAST NAME </th>
+                        <th style={{ border: '2px solid red', height: '50px' }}> PHONE NUMBER </th>
+                    </tr>
+                </table>
+                   <ListProducers /> 
             </div>
 
         );
