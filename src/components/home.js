@@ -6,7 +6,7 @@ import './home.css';
 import Footer from './footer';
 import Navibar from './Navibar';
 import AnotherList from './anotherlist';
-import ListProducers from './FetchTrial';
+import ProducerList from './ProducerList';
  
 
 /*
@@ -50,7 +50,7 @@ are exported to and displayed
                         <th style={{ border: '2px solid red', height: '50px' }}> PHONE NUMBER </th>
                     </tr>
                 </table>
-                   <ListProducers /> 
+                   <ProducerList />
             </div>
 
         );

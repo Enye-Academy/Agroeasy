@@ -9,7 +9,7 @@ class ListProducers extends Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:4000/producers')
+        fetch('http://localhost:4000/products')
        .then(results=>{
             return results.json();
 
@@ -23,7 +23,6 @@ class ListProducers extends Component{
                     <tr >
                         <td style={{ height:'30px', width: '39%' }}><h3> {item.firstName} </h3> </td>
                         <td style={{ height:'30px', width: '37%' }}><h3> {item.lastName} </h3> </td>
-                        <td style={{ height:'30px', width: '39%' }}><h3> {item.phoneNumber} </h3> </td>
                    </tr>
                     </table>
                    </div>
@@ -31,8 +30,8 @@ class ListProducers extends Component{
             });
             
         this.setState({producers});
-        console.log('state', this.state.producers); 
-        });
+/*         console.log('state', this.state.producers); 
+ */        });
 
     }
 
