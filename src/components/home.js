@@ -7,6 +7,7 @@ import Footer from './footer';
 import Navibar from './Navibar';
 import AnotherList from './anotherlist';
 import ProducerList from './ProducerList';
+import ProductList  from './ProductList';
  
 
 /*
@@ -51,6 +52,7 @@ are exported to and displayed
                     </tr>
                 </table>
                    <ProducerList />
+                   <ProductList />
             </div>
 
         );

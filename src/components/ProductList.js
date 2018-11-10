@@ -2,11 +2,11 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { requestProducerData } from "../actions/index";
+import { requestProductData } from "../actions/index";
 
-class ProducerList extends React.Component {
+class ProductList extends React.Component {
   componentDidMount() {
-    this.props.requestProducerData();
+    this.props.requestProductData();
   }
   person = (x, i) =>
 
@@ -15,15 +15,15 @@ class ProducerList extends React.Component {
     <tr>
         
       <td  style={{ height:'30px', width: '39%' }}>
-         {x.lastName}
+         {x.name}
       </td>
 
       <td  style={{ height:'30px', width: '39%' }}>
-        {x.firstName}
+        {x.quantity}
       </td>
 
       <td>
-        {x.phoneNumber}
+        {x.typeOfProduct}
       </td>
 
     </tr>
@@ -42,7 +42,7 @@ class ProducerList extends React.Component {
 const mapStateToProps = state => ({ data: state.data });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ requestProducerData }, dispatch);
+  bindActionCreators({ requestProductData }, dispatch);
 
- const FetchingData = connect(mapStateToProps, mapDispatchToProps)(ProducerList); 
- export default FetchingData;
+ const FetchingProductData = connect(mapStateToProps, mapDispatchToProps)(ProductList); 
+ export default FetchingProductData;
