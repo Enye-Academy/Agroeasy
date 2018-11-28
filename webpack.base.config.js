@@ -3,54 +3,59 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: devMode ? 'development' : 'production',
-  output: {
-      path: __dirname + "/dist",
-      filename: "bundle.js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
+    mode: devMode ? 'development' : 'production',
+    module: {
+        rules: [
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    'postcss-loader',
+                    'sass-loader',
+                ],
+            },
+            {
+                exclude: /node_modules/,
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader'],
+            },
         ],
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-          test: /\.(png|svg|jpg|gif)$/,
-          use: ['file-loader'],
-      }
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    }),
-  ],
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-      },
     },
-  },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                styles: {
+                    chunks: 'all',
+                    enforce: true,
+                    name: 'styles',
+                    test: /\.css$/,
+                },
+            },
+        },
+    },
+    output: {
+        chunkFilename: "[id].[chunkhash].js",
+        filename: "[name].[chunkhash].js",
+        path: `${__dirname}/dist`,
+    },
+    performance: {
+        hints: false,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: './index.html',
+            template: './src/index.html',
+        }),
+        new MiniCssExtractPlugin({
+            chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+            filename: devMode ? '[name].css' : '[name].[hash].css',
+        }),
+    ],
 };
