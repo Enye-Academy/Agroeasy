@@ -3,7 +3,9 @@ import { Col, Layout, Row } from 'antd';
 
 import { FOOTER_STRINGS } from './constants';
 import { components } from '../../productsAvailable';
+import { components as UserPageComponent } from '../../userPage';
 
+const { UserPage } = UserPageComponent;
 const { ProductsAvailable } = components;
 const { Content, Footer } = Layout;
 const { CENTER, FLEX, FOOTER, FOOTER_CONTENT, FOOTER_TEXT, LOWER_FOOTER } = FOOTER_STRINGS;
@@ -25,6 +27,7 @@ class  AppFoot extends React.Component {
                         </Col>
                     </Row>
                 </Footer>
+                <UserPage />
             </Layout>
         );
     }
