@@ -24,7 +24,6 @@ app.use('/', expressStaticGzip(path.join(__dirname, 'dist'), {
     enableBrotli: true,
     orderPreference: ['br', 'gz'],
 }));
-app.use(express.static(__dirname));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
