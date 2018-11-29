@@ -51,6 +51,7 @@ export const PRODUCT = {
     },
     BUY: 'Buy Now',
     CANCEL: 'Cancel',
+    CARD_IMAGE: 'card-image',
     COST: 'Cost:',
     DEFAULT_DESCRIPTION: 'This is the product description',
     EMAIL: "Email:",

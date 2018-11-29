@@ -5,11 +5,13 @@ import { Avatar, Card, Icon, Tag } from 'antd';
 import ProductModal from './ProductModal';
 import { PRODUCT } from './constants';
 
-//TODO: set cover image max width
-// cover={<img src={image} />}
-
 const { Meta } = Card;
-const { ACTIONS: { INFO_CIRCLE, SHOPPING }, DEFAULT_DESCRIPTION, TAG_COLOR } = PRODUCT;
+const {
+    ACTIONS: { INFO_CIRCLE, SHOPPING },
+    CARD_IMAGE,
+    DEFAULT_DESCRIPTION,
+    TAG_COLOR,
+} = PRODUCT;
 
 // React Component used to render the product item in a 'Card'
 class Product extends React.Component {
@@ -41,6 +43,7 @@ class Product extends React.Component {
             <div>
                 <Card
                     actions={actions}
+                    cover={<img className={CARD_IMAGE} src={image} />}
                     hoverable
                     key={name}
                 >
