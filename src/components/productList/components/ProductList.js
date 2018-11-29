@@ -12,7 +12,7 @@ class ProductList extends React.Component {
                 bordered
                 className={PRODUCT_LIST_CLASSNAME}
                 dataSource={EXAMPLE_PRODUCTS}
-                grid={{ gutter: 12, lg: 4, md: 4, sm: 2, xl: 6, xs: 1, xxl: 3 }}
+                grid={{ gutter: 12, lg: 4, md: 4, sm: 2, xs: 1, xxl: 3 }}
                 renderItem={item => (
                     <List.Item>
                         <Product data={item} />
