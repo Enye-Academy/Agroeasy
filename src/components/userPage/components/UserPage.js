@@ -1,7 +1,7 @@
 import React from 'react';
-import { Col, Row, Layout } from 'antd';
+import { Layout } from 'antd';
 
-import Navibar from '../../home/components/Navibar';
+import Navbar from './Navbar';
 import Options from './Sider';
 
 const { Content, Header, Sider } = Layout;
@@ -11,14 +11,13 @@ class UserPage extends React.Component {
     render() {
         return(
             <div>
-                <Navibar />
-                <Navibar />
+                <Navbar />
+                <Header className="sm-heading">
+                    <div>My AgroEasy</div>
+                </Header>
                 <Layout className="main-layout">
-                    <Header className="nav-header"><Navibar /></Header>
-                    <Layout>
-                        <Sider className="sider"><Options /></Sider>
-                        <Content className="content">Content</Content>
-                    </Layout>
+                    <Sider className="sider"><Options /></Sider>
+                    <Content className="content">Content</Content>
                 </Layout>
             </div>
         );

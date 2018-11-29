@@ -1,7 +1,41 @@
-.nav-header {
-    background-color: black;
-}
-
+/*
+sider component
+*/
 .sider {
     color: red;
+}
+/*
+Header
+*/
+.sm-heading {
+    background: white;
+}
+.sm-heading div {
+    color: black;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*
+Navbar Component
+*/
+.main-nav-div {
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.navbar-menu {
+    background: white;
+    float: right;
+}
+.nav-items {
+    color: black !important;
+    font-weight: 500;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.hi-user {
+    color: black !important;
+    margin-left: 70px;
+    margin-left: 70px;
 }
