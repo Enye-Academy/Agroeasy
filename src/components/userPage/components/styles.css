@@ -14,14 +14,13 @@ Header
     color: black;
     font-weight: 500;
     font-size: 19px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans''Lucida Sans Regular''Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 /*
 Navbar Component
 */
 .main-nav-div {
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .navbar-menu {
@@ -38,4 +37,5 @@ Navbar Component
     color: black !important;
     margin-left: 70px;
     margin-left: 70px;
+    font-weight: 400;
 }

@@ -10,10 +10,10 @@ const { Content, Header, Sider } = Layout;
 class UserPage extends React.Component {
     render() {
         return(
-            <div>
+            <div className="sm-heading">
                 <Navbar />
                 <Header className="sm-heading">
-                    <div>My AgroEasy</div>
+                    <div style={{ marginTop: "20px"}}>My AgroEasy</div>
                 </Header>
                 <Layout className="main-layout">
                     <Sider className="sider"><Options /></Sider>
