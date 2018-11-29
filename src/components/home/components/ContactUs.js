@@ -4,7 +4,7 @@ import { Button, Modal } from 'antd';
 import { NAV_LINKS, CONTACT_US } from './constants';
 import FormContent from './FormContent';
 
-const { BACK, CANCEL, EMAIL, MESSAGE, NAME, PRIMARY, SMALL, SUBMIT, TITLE } = CONTACT_US;
+const { BACK, CANCEL, PRIMARY, SMALL, SUBMIT, TITLE } = CONTACT_US;
 
 export default class ContactUs extends React.Component {
     state = {

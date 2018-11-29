@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --mode development --config webpack.base.config.js --open --hot --history-api-fallback",
     "build": "webpack --mode production --config webpack.prod.config.js --env.NODE_ENV=production --progress",
     "start": "node server",
-    "lint":"eslint src controllers server.js routes models"
+    "lint":"eslint package.json src controllers server.js routes models "
   },
   "repository": {
     "type": "git",
@@ -24,19 +24,15 @@
     "@babel/runtime": "^7.1.2",
     "antd": "^3.10.7",
     "body-parser": "^1.18.3",
-    "bootstrap": "^4.1.3",
     "cors": "^2.8.5",
-    "evergreen-ui": "^4.3.0",
     "express": "^4.16.3",
     "mongoose": "^5.2.17",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
-    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.0.5",
-    "reactstrap": "^6.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
