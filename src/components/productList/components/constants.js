@@ -1,12 +1,3 @@
-//strings for ListItems.js
-export const LIST_ITEMS = {
-    CENTER: "center",
-    FLEX: "flex",
-    HEADER: "header",
-    ROW_ITEMS: "row-items",
-    SMALL_DIV: "small-div",
-};
-
 //Texts for ProductLocations.js
 export const PRODUCTION_LOCATIONS = {
     BIG_DIV: "main-div",
@@ -54,9 +45,14 @@ export const PLACES = [
 ];
 
 export const PRODUCT = {
+    ACTIONS: {
+        INFO_CIRCLE: 'info-circle',
+        SHOPPING: 'shopping',
+    },
     BUY: 'Buy Now',
     CANCEL: 'Cancel',
-    COST: "Cost:",
+    COST: 'Cost:',
+    DEFAULT_DESCRIPTION: 'This is the product description',
     EMAIL: "Email:",
     LOCATION: "Location:",
     MORE: 'More Info',
@@ -64,6 +60,7 @@ export const PRODUCT = {
     PHONE: "Phone #:",
     PRODUCERS_NAME: `Producer's Name:`,
     QUANTITY: "Available Quantity:",
+    TAG_COLOR: 'gold',
 };
 
 export const EXAMPLE_PRODUCTS = [
@@ -214,3 +211,5 @@ export const EXAMPLE_PRODUCTS = [
         quantity: " ",
     },
 ];
+
+export const PRODUCT_LIST_CLASSNAME = 'product-list';

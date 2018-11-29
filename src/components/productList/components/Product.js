@@ -3,19 +3,20 @@ import React from 'react';
 import { Avatar, Card, Icon, Tag } from 'antd';
 
 import ProductModal from './ProductModal';
+import { PRODUCT } from './constants';
 
+//TODO: set cover image max width
 // cover={<img src={image} />}
-const { Meta } = Card;
 
+const { Meta } = Card;
+const { ACTIONS: { INFO_CIRCLE, SHOPPING }, DEFAULT_DESCRIPTION, TAG_COLOR } = PRODUCT;
+
+// React Component used to render the product item in a 'Card'
 class Product extends React.Component {
-    state = {
-        visible: false,
-    }
+    state = { visible: false }
 
     showModal = () => {
-        this.setState({
-            visible: true,
-        });
+        this.setState({ visible: true });
     }
 
     handleCancel = () => {
@@ -27,14 +28,15 @@ class Product extends React.Component {
         const { cost, image, name } = this.props.data;
         const description = tag => (
             <div>
-                <Tag color="gold">{tag}</Tag>
-                {"This is the product description"}
+                <Tag color={TAG_COLOR}>{tag}</Tag>
+                {DEFAULT_DESCRIPTION}
             </div>
         );
         const actions = [
-            <Icon key='shopping' type='shopping' />,
-            <Icon key='info-circle' type='info-circle' onClick={this.showModal} />,
+            <Icon key={SHOPPING} type={SHOPPING} />,
+            <Icon key={INFO_CIRCLE} type={INFO_CIRCLE} onClick={this.showModal} />,
         ];
+
         return (
             <div>
                 <Card

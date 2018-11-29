@@ -2,15 +2,15 @@ import React from 'react';
 import { List } from 'antd';
 
 import Product from './Product';
-import { EXAMPLE_PRODUCTS } from './constants';
+import { EXAMPLE_PRODUCTS, PRODUCT_LIST_CLASSNAME } from './constants';
 
-//contains components SearchItems, ProductsLocation and Rows
+// React Component used to render the list of product items
 class ProductList extends React.Component {
     render() {
         return(
             <List
                 bordered
-                className='product-list'
+                className={PRODUCT_LIST_CLASSNAME}
                 dataSource={EXAMPLE_PRODUCTS}
                 grid={{ gutter: 12, lg: 4, md: 4, sm: 2, xl: 6, xs: 1, xxl: 3 }}
                 renderItem={item => (

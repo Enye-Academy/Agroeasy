@@ -20,6 +20,7 @@ const generateDescription = data => {
     return keyValuePairs.map(({ key, value }) => <p key={key}><b>{key}</b> {value}</p>);
 };
 
+// React Component used to render the product detail information in a 'Modal'
 class ProductModal extends React.Component {
     render() {
         const { data, handleCancel, visible } = this.props;
