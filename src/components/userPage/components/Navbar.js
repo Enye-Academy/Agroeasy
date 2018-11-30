@@ -5,7 +5,7 @@ import { Icon, Layout, Menu } from 'antd';
 import { LOGO, NAVBAR } from './constants';
 
 const { SOURCE, WIDTH } = LOGO;
-const { LINKS: { HOME, SUPPORT }, STINGS: { CATEGORIES, FAQS, HOME_TEXT, SUPPORT_TEXT } } = NAVBAR;
+const { LINKS: { HOME, SUPPORT }, STINGS: { CATEGORIES, FAQS, HI_USER_ICON, HI_USER_TEXT, HOME_TEXT, SUPPORT_TEXT } } = NAVBAR;
 const { Header } = Layout;
 
 export default class Navbar extends React.Component {
@@ -13,7 +13,9 @@ export default class Navbar extends React.Component {
         return (
             <Layout>
                 <Header style={{ background: "white" }}>
-                    <div className="main-nav-div"><Link to={HOME}><img src={SOURCE} width={WIDTH} /></Link>
+                    <div className="main-nav-div">
+                        <Link to={HOME}><img src={SOURCE} width={WIDTH} />
+                        </Link>
                         <Menu theme="dark" mode="horizontal" className="navbar-menu" >
                             <Menu.Item>
                                 <Link to={HOME} className="nav-items">{HOME_TEXT}</Link>
@@ -24,10 +26,8 @@ export default class Navbar extends React.Component {
                             </Menu.Item>
                             <Menu.Item className="nav-items">{FAQS}</Menu.Item>
                             <Menu.Item className="hi-user">
-                                Hi user! &nbsp;
-                                <Icon type="gift"
-                                    style={{ backgroundColor: 'ash', color: 'orange', fontSize: '22px' }}
-                                />
+                                {HI_USER_TEXT} &nbsp;
+                                <Icon type="gift" className={HI_USER_ICON} />
                             </Menu.Item>
                         </Menu>
                     </div>

@@ -39,3 +39,8 @@ Navbar Component
     margin-left: 70px;
     font-weight: 400;
 }
+.hi-user-icon {
+    background-color: ash;
+    color: orange;
+    font-size: 22px;
+}

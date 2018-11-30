@@ -13,7 +13,7 @@ class UserPage extends React.Component {
             <div className="sm-heading">
                 <Navbar />
                 <Header className="sm-heading">
-                    <div style={{ marginTop: "20px"}}>My AgroEasy</div>
+                    <div style={{ marginTop: "20px" }}>My AgroEasy</div>
                 </Header>
                 <Layout className="main-layout">
                     <Sider className="sider"><Options /></Sider>

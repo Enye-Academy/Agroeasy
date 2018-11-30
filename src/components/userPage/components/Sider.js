@@ -6,7 +6,7 @@ export default class Options extends React.Component {
         return (
             <Row type="flex" justify="center">
                 <Col>
-                   Options
+                    <div>Options</div>
                 </Col>
             </Row>
         );
