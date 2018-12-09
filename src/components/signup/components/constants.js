@@ -4,9 +4,11 @@ export const SIGNUP_STRINGS = {
     CLASSNAME_AGREEMENT: "agreementQuote",
     CLASSNAME_FORM: "signupForm",
     CLASSNAME_SCROLLBAR: "scrollBar",
+    NO: "No",
     PRIMARY: "primary",
     READ: "I have read the ",
     TITLE: "Sign up",
+    YES: "Yes",
 };
 
 export const formItemLayout = {

@@ -22,7 +22,7 @@ export default class Signin extends React.Component {
         const form = this.formRef.props.form;
         form.validateFields(err => {
             if (err) {
-                return;
+                return err;
             }
   
             form.resetFields();

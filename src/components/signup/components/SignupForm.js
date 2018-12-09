@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {  Checkbox, Form, Input, Modal } from 'antd';
+import {  Checkbox, Form, Input, Modal, Radio } from 'antd';
 
 import { formItemLayout, INPUTS, SIGNUP_STRINGS } from './constants';
+// import TypeofProductInput from './TypeofProductInput';
 
 const FormItem = Form.Item;
 const {
     AGREEMENT,
     CLASSNAME_AGREEMENT,
     CLASSNAME_SCROLLBAR,
+    NO,
     READ,
     TITLE,
+    YES,
 } = SIGNUP_STRINGS;
 
 function generateSignupInputs(decorator) {
@@ -35,9 +38,20 @@ function generateSignupInputs(decorator) {
     });
 }
 class SignupModal extends React.Component {
+    state = {
+        isProducer: false,
+    };
+
+    toggleIsProducer = () => {
+        this.setState ({
+            isProducer: !this.state.isProducer,
+        });
+    }
+
     render() {
         const { form, onCancel, onCreate, visible } = this.props;
         const { getFieldDecorator } = form;
+        const { isProducer } = this.state;
 
         return (
             <Modal
@@ -49,6 +63,17 @@ class SignupModal extends React.Component {
                 className= {CLASSNAME_SCROLLBAR}
             >
                 <Form>
+                    <FormItem>
+                        <Radio.Group 
+                            defaultValue="no"
+                            buttonStyle="solid"
+                            name={YES}
+                            onChange={this.toggleIsProducer}
+                        >
+                            <Radio.Button value="yes">{YES}</Radio.Button>
+                            <Radio.Button value="no">{NO}</Radio.Button>
+                        </Radio.Group>
+                    </FormItem>
                     {generateSignupInputs(getFieldDecorator)}
                     <FormItem 
                         className={CLASSNAME_AGREEMENT}
