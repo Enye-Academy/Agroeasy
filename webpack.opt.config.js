@@ -4,21 +4,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-<<<<<<< HEAD
-    optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    mangle: {
-                        keep_fnames: true,
-                    },
-                },
-            }),
-        ],
-    },
-    plugins: [
-        new OptimizeCssAssetsPlugin(),
-=======
     devtool: '',
     optimization: {
         minimizer: [
@@ -53,6 +38,5 @@ module.exports = {
             test: /\.js$|\.css$|\.html$/,
             threshold: 10240,
         }),
->>>>>>> master
     ],
 };

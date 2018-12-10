@@ -11,84 +11,42 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     mode: devMode ? 'development' : 'production',
-<<<<<<< HEAD
-    output: {
-        path: `${__dirname  }/dist`,
-        filename: "bundle.js",
-    },
-=======
->>>>>>> master
     module: {
         rules: [
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-<<<<<<< HEAD
-                    'css-loader',
-=======
                     { loader: 'css-loader', options: { importLoaders: 1 } },
                     'postcss-loader',
->>>>>>> master
                     'sass-loader',
                 ],
             },
             {
-<<<<<<< HEAD
-                test: /\.js$/,
-                exclude: /node_modules/,
-=======
                 exclude: /node_modules/,
                 test: /\.js$/,
->>>>>>> master
                 use: {
                     loader: 'babel-loader',
                 },
             },
             {
-<<<<<<< HEAD
-                test: /\.(png|svg|jpg|gif)$/,
-=======
                 test: /\.(png|svg|jpe?g|gif)$/,
->>>>>>> master
                 use: ['file-loader'],
             },
         ],
     },
-<<<<<<< HEAD
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: './index.html',
-        }),
-        new MiniCssExtractPlugin({
-            filename: devMode ? '[name].css' : '[name].[hash].css',
-            chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-        }),
-    ],
-=======
->>>>>>> master
     optimization: {
         splitChunks: {
             cacheGroups: {
                 styles: {
-<<<<<<< HEAD
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true,
-=======
                     chunks: 'all',
                     enforce: true,
                     name: 'styles',
                     test: /\.css$/,
->>>>>>> master
                 },
             },
         },
     },
-<<<<<<< HEAD
-=======
     output: {
         chunkFilename: "[id].[hash].js",
         filename: "[name].[hash].js",
@@ -131,5 +89,4 @@ module.exports = {
             name: '[name].[ext]',
         }),
     ],
->>>>>>> master
 };

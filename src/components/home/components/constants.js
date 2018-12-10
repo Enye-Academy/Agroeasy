@@ -37,6 +37,7 @@ export const NAVIBAR = {
     FLOAT_NAV: "link-position",
     GOODS_TEXT: "Goods",
     HOME_TEXT: "Home",
+    MAIN_NAV: "main-nav",
     NAV_BAR: "nav-bar",
     NAV_LINK: "navLink",
     NAV_MODE: "horizontal",

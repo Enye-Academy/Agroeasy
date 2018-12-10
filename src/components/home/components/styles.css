@@ -79,6 +79,11 @@
 /*
  this is for Navibar.js and home.js
   */
+  .main-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1; 
+  }
 .bg-img{
     background-image:
         linear-gradient( rgba(0, 0, 0, 0.336),
@@ -173,6 +178,8 @@ img {
 .link-position {
     float: right;
     margin-top: 4px;
+    margin-right: 600px;
+    width: 485px;
 }
 
 /*Support.js */
