@@ -1,7 +1,6 @@
 import React from 'react';
 import { Avatar, Col, Divider, Layout, List, Row } from 'antd';
 
-
 import { FAKE_USER } from './constants';
 
 const { Content } = Layout;
