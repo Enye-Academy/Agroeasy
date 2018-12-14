@@ -17,20 +17,9 @@ export const NAVBAR = {
 //app logo
 export const LOGO = {
     SOURCE:  "/images/Agroeasylogo.png",
-    WIDTH: "80px",
+    WIDTH: "60px",
 };
-//MY_OPTIONS
-export const MY_OPTIONS = [
-    "ACCOUNT INFO",
-    "NOTIFICATIONS",
-    "MESSAGES",
-    "MY SALE ITEMS",
-    "PURCHASES",
-    "SAVED ITEMS",
-    "MY COUPONS",
-    "SETTINGS",
-    "HELP",
-];
+
 //Producer profile
 export const FAKE_USER = {
     address: '24, Wilkie Crescent, Ikeja',

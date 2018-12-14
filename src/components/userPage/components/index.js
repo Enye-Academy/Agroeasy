@@ -1,4 +1,4 @@
-import UserPage from './UserPage';
+import SideMenu from './SideMenu';
 import './styles.css';
 
-export default { UserPage };
+export default { SideMenu };
