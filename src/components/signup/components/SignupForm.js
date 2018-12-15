@@ -3,7 +3,6 @@ import React from 'react';
 import {  Checkbox, Form, Input, Modal, Radio } from 'antd';
 
 import { formItemLayout, INPUTS, SIGNUP_STRINGS } from './constants';
-// import TypeofProductInput from './TypeofProductInput';
 
 const FormItem = Form.Item;
 const {
@@ -42,9 +41,9 @@ class SignupModal extends React.Component {
         isProducer: false,
     };
 
-    toggleIsProducer = () => {
+    toggleIsProducer = e => {
         this.setState ({
-            isProducer: !this.state.isProducer,
+            isProducer: e.target.value,
         });
     }
 
@@ -67,15 +66,29 @@ class SignupModal extends React.Component {
                         <Radio.Group 
                             defaultValue="no"
                             buttonStyle="solid"
-                            name={YES}
                             onChange={this.toggleIsProducer}
                         >
-                            <Radio.Button value="yes">{YES}</Radio.Button>
-                            <Radio.Button value="no">{NO}</Radio.Button>
+                            <Radio.Button value={true}>{YES}</Radio.Button>
+                            <Radio.Button value={false}>{NO}</Radio.Button>
                         </Radio.Group>
                     </FormItem>
                     {generateSignupInputs(getFieldDecorator)}
-                    <FormItem 
+                    {isProducer &&
+                    <FormItem
+                        {...formItemLayout}
+                        label="Product Type"
+                    >
+                        {
+                            getFieldDecorator('phone', {
+                                rules:
+                                [{ message: 'Please input your sales category', required: true }],
+                            })(
+                                <Input />
+                            )
+                        }
+                    </FormItem>
+                    }
+                    <FormItem
                         className={CLASSNAME_AGREEMENT}
                     >
                         {getFieldDecorator("agreement", {
