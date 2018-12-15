@@ -52,11 +52,23 @@ Navbar Component
 .avatar {
     margin-left: 400px;
 }
-.user-info-layout {
+.info-layout {
     background-color: white;
     justify-content: center;
 }
-.user-info-row {
+.info-row {
     justify-content: center;
     margin-top: 20px;
+}
+.user-info-content {
+    margin: 24px 16px 0;
+}
+.basic-info {
+    margin-right: 100px;
+}
+.contact-info {
+    margin-right: 10px;
+}
+.location-info {
+    margin-left: 60px;
 }
