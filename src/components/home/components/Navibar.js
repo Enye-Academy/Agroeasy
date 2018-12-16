@@ -3,13 +3,9 @@ import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
 import ContactUs from './ContactUs';
-<<<<<<< HEAD
-import { GOODS, HOME, LOGO, NAVIBAR } from './constants';
-=======
 import { components as SigninComponents } from '../../signin';
 import { components as SignupComponents } from '../../signup/';
-import { GOODS, HOME, LOGO, NAVIBAR, SUPPORT } from './constants';
->>>>>>> master
+import { GOODS, HOME, LOGO, NAVIBAR } from './constants';
 
 const { GOODS_TEXT, HOME_TEXT, FLOAT_NAV, MAIN_NAV, NAV_LINK, NAV_MODE,
     NAV_THEME } = NAVIBAR;
