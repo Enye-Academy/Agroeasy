@@ -4,8 +4,24 @@
 }
 
   .agreementQuote {
-    font-size: 15px;
-    margin-left: 24px;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .radiogroupform{
+    font-size: 20px;
+    font-weight: bold;
+    color: #006400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .radiobuttons{
+    font-size: 14px;
+    margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
   }

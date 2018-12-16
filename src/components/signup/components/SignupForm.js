@@ -1,16 +1,25 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {  Checkbox, Form, Input, Modal, Radio } from 'antd';
+import {  Checkbox, Form, Input, Modal, Radio, Select } from 'antd';
 
-import { formItemLayout, INPUTS, SIGNUP_STRINGS } from './constants';
+import { formItemLayout, INPUTS, PRODUCTS, SIGNUP_STRINGS } from './constants';
 
 const FormItem = Form.Item;
 const {
     AGREEMENT,
+    CATEGORIES,
     CLASSNAME_AGREEMENT,
+    CLASSNAME_ITTEM1,
+    CLASSNAME_RADIOBUTTONS,
     CLASSNAME_SCROLLBAR,
+    MESSAGE,
+    MODE,
     NO,
+    PRODUCER,
+    PRODUCT_TYPE,
     READ,
+    SMALL,
+    SOLID,
     TITLE,
     YES,
 } = SIGNUP_STRINGS;
@@ -36,6 +45,23 @@ function generateSignupInputs(decorator) {
         );
     });
 }
+
+const Option = Select.Option;
+
+function handleChange(value) {
+    return value;
+}
+
+function createCategories() {
+    return PRODUCTS.map(product => {
+        const { value, category } = product;
+
+        return (
+            <Option value={value}>{category}</Option>
+        );
+    });
+}
+
 class SignupModal extends React.Component {
     state = {
         isProducer: false,
@@ -62,32 +88,49 @@ class SignupModal extends React.Component {
                 className= {CLASSNAME_SCROLLBAR}
             >
                 <Form>
-                    <FormItem>
+                    <FormItem className={CLASSNAME_ITTEM1}>
+                        {PRODUCER}
                         <Radio.Group 
-                            defaultValue="no"
-                            buttonStyle="solid"
+                            defaultValue={false}
+                            buttonStyle={SOLID}
                             onChange={this.toggleIsProducer}
+                            size={SMALL}
+                            className={CLASSNAME_RADIOBUTTONS}
                         >
                             <Radio.Button value={true}>{YES}</Radio.Button>
                             <Radio.Button value={false}>{NO}</Radio.Button>
                         </Radio.Group>
                     </FormItem>
-                    {generateSignupInputs(getFieldDecorator)}
                     {isProducer &&
                     <FormItem
                         {...formItemLayout}
-                        label="Product Type"
+                        label={PRODUCT_TYPE}
                     >
                         {
                             getFieldDecorator('phone', {
                                 rules:
-                                [{ message: 'Please input your sales category', required: true }],
+                                [{ message: { MESSAGE }, required: true }],
                             })(
-                                <Input />
+                                <Select
+                                    showSearch
+                                    mode={MODE}
+                                    placeholder={CATEGORIES}
+                                    onChange={handleChange}
+                                    filterOption=
+                                        {
+                                            (input, option) => 
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                >
+                                    {createCategories}
+                                </Select>
                             )
                         }
                     </FormItem>
+                
                     }
+
+                    {generateSignupInputs(getFieldDecorator)}
                     <FormItem
                         className={CLASSNAME_AGREEMENT}
                     >

@@ -3,10 +3,18 @@ export const SIGNUP_STRINGS = {
     AGREEMENT: "agreement",
     CLASSNAME_AGREEMENT: "agreementQuote",
     CLASSNAME_FORM: "signupForm",
+    CLASSNAME_ITTEM1: "radiogroupform",
+    CLASSNAME_RADIOBUTTONS: "radiobuttons",
     CLASSNAME_SCROLLBAR: "scrollBar",
+    MESSAGE: "select categories",
+    MODE: "multiple",
     NO: "No",
     PRIMARY: "primary",
+    PRODUCER: "Are you a producer?",
+    PRODUCT_TYPE: "Product Type",
     READ: "I have read the ",
+    SMALL: "small",
+    SOLID: "solid",
     TITLE: "Sign up",
     YES: "Yes",
 };
@@ -53,15 +61,42 @@ export const INPUTS = [
         rules: [{ message: "Please input your location!", required: true }],
     },
     {
-        field: 'password',
+        field: "password",
         inputType: "password",
         label: "Password",
         rules: [{ message: "Please input your password!", required: true } ],
     },
     {
-        field: 'confirm',
+        field: "confirm",
         inputType: "password",
         label: "Confirm password",
         rules: [{ message: "Please confirm your password!", required: true }],
+    },
+];
+
+export const PRODUCTS = [
+    {
+        category: "rice",
+        value: "rice",
+    },
+    {
+        category: "vegetable",
+        value: "vegetable",
+    },
+    {
+        category: "beans",
+        value: "beans",
+    },
+    {
+        category: "grains",
+        value: "grains",
+    },
+    {
+        category: "wheat",
+        value: "wheat",
+    },
+    {
+        category: "other",
+        value: "other",
     },
 ];
