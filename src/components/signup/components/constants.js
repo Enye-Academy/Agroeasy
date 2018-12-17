@@ -1,12 +1,13 @@
 /* Signup Form Strings*/
 export const SIGNUP_STRINGS = {
     AGREEMENT: "agreement",
+    CATEGORIES: "Select Categories",
     CLASSNAME_AGREEMENT: "agreementQuote",
     CLASSNAME_FORM: "signupForm",
     CLASSNAME_ITTEM1: "radiogroupform",
     CLASSNAME_RADIOBUTTONS: "radiobuttons",
     CLASSNAME_SCROLLBAR: "scrollBar",
-    MESSAGE: "select categories",
+    MESSAGE: "Please select category",
     MODE: "multiple",
     NO: "No",
     PRIMARY: "primary",

@@ -5,6 +5,7 @@ import {  Checkbox, Form, Input, Modal, Radio, Select } from 'antd';
 import { formItemLayout, INPUTS, PRODUCTS, SIGNUP_STRINGS } from './constants';
 
 const FormItem = Form.Item;
+const Option = Select.Option;
 const {
     AGREEMENT,
     CATEGORIES,
@@ -46,12 +47,10 @@ function generateSignupInputs(decorator) {
     });
 }
 
-const Option = Select.Option;
-
 function handleChange(value) {
     return value;
 }
-
+/* 
 function createCategories() {
     return PRODUCTS.map(product => {
         const { value, category } = product;
@@ -60,7 +59,7 @@ function createCategories() {
             <Option value={value}>{category}</Option>
         );
     });
-}
+} */
 
 class SignupModal extends React.Component {
     state = {
@@ -107,7 +106,7 @@ class SignupModal extends React.Component {
                         label={PRODUCT_TYPE}
                     >
                         {
-                            getFieldDecorator('phone', {
+                            getFieldDecorator('productType', {
                                 rules:
                                 [{ message: { MESSAGE }, required: true }],
                             })(
@@ -122,7 +121,12 @@ class SignupModal extends React.Component {
                                                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                         }
                                 >
-                                    {createCategories}
+                                    {
+                                        PRODUCTS.map(({ category, value }) => {
+                                            <option value = {value}>{category}</option>;
+                                        })
+                                    }
+  
                                 </Select>
                             )
                         }
