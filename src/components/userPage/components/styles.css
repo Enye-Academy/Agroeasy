@@ -12,12 +12,6 @@
     margin-top: 7px; 
 }
 
-.divider {
-    margin-right: 100px;
-}
-.profile-info {
-    margin-bottom: -8px;
-}
 /*
 Navbar Component
 */
@@ -49,26 +43,64 @@ Navbar Component
     size: 150px;
 }
 /*UserInfo */
-.avatar {
-    margin-left: 400px;
+.header-title {
+    color: darkgray;
+    font-size: 11px;
 }
-.info-layout {
-    background-color: white;
-    justify-content: center;
+.data-title {
+    margin-top: 15px;
+    margin-bottom: 19.2px;  
 }
-.info-row {
-    justify-content: center;
-    margin-top: 20px;
+.data-title div {
+     float: right;
+     font-size: 12px;
+     text-align: right;   
 }
-.user-info-content {
-    margin: 24px 16px 0;
+.data-title b {
+    font-size: 12px;
 }
 .basic-info {
-    margin-right: 100px;
+    margin-top: 15px;
+    padding-bottom: 17.4px; 
 }
-.contact-info {
-    margin-right: 10px;
+.basic-info b {
+    font-size: 12px;
 }
-.location-info {
-    margin-left: 60px;
+.basic-info div {
+    float: right;
+    font-size: 13px;
+    padding-right: 24px; 
+}
+.big-card {
+    background-color: DodgerBlue;
+    width: 1000px;
+}
+.card-header {
+    color: white;
+    font-size: 16px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-weight: 600;
+    padding-left: 37px; 
+}
+.inner-card {
+    padding-right: 40px; 
+    padding-left: 40px;
+}
+/**UserProfile.js */
+.big-content {
+    padding: 0 50px;
+}
+.big-layout {
+    background: #fff;  
+    padding: 24px 0;
+}
+.sider {
+    background: #fff;
+}
+.menu {
+    height: 100%;
+}
+.sm-content {
+    min-height: 280; 
+    padding: 0 24px;
 }

@@ -1,51 +1,51 @@
 import React from 'react';
 import { Avatar, Card, Col, Row, Divider } from 'antd';
 
-import { CONTACT, DATA, LOCATION } from './constants';
+import { CONTACT, DATA, LOCATION, USER_PAGE } from './constants';
 
 const { Meta } = Card;
+const { CLASSNAMES: { BASIC_INFO, BIG_CARD, CARD_HEADER, DATA_TITLE, HEADER_TITLE, INNER_CARD },
+    TEXTS: { CONTACT_INFO_TEXT, LOCATION_INFO_TEXT, USER_PROFILE },
+    STRINGS: { SQUARE },
+} = USER_PAGE;
 
 export default class Profile extends React.Component {
     render() {
         return (
             <Card 
-                title={<h4>User Profile</h4>} 
-                style={{ backgroundColor: 'MidnightBlue', width: 1000  }}
+                className={BIG_CARD}
+                title={<h4 className={CARD_HEADER}>{USER_PROFILE}</h4>} 
             >
-                <div style={{  padding: '10px' }}>
+                <div className={INNER_CARD}>
                     <Row>
                         <Col span={7}>
                             <Card  bordered={false} > 
-                                <Meta style={{ marginLeft: 18 }}
-                                    title={<Avatar src="./images/josh.jpg"
-                                        size={170} shape="square"
-                                    />
-                                    }
-                                   
-                                    description={
-                                        DATA.map(data => (
-                                            <div key={data.title} style={{ marginTop: 15, paddingTop: 12 }}>
-                                                <b>{data.title}</b>
-                                                <div style={{ float: 'right' }}>{data.description}</div>
-                                            </div>
-                                        ))
-                                    }
+                                <Meta title={<Avatar src="./images/josh.jpg"
+                                    size={170} shape={SQUARE}
+                                />}
+                                description={
+                                    DATA.map(data => (
+                                        <div key={data.title} className={BASIC_INFO}>
+                                            <b>{data.title}</b>
+                                            <div>{data.description}</div>
+                                        </div>
+                                    ))
+                                }
                                 />
                             </Card>
                         </Col>
-                        <Col span={17} style={{ marginRight: -20 }}>
-                            <div >
+                        <Col span={17}>
+                            <div>
                                 <Card  
                                     bordered={false}
                                 >
                                     <Meta
-                                        style={{ marginBottom: 35 }}
-                                        title={<h4>Contact Info</h4>}
+                                        title={<h4 className={HEADER_TITLE}>{CONTACT_INFO_TEXT}</h4>}
                                         description={
                                             CONTACT.map(contact => (
-                                                <div key={contact.title} style={{ marginTop: 15 }}>
+                                                <div key={contact.title} className={DATA_TITLE}>
                                                     <b>{contact.title}</b>                                       
-                                                    <div style={{ float: "right" }}>
+                                                    <div>
                                                         {contact.description}
                                                     </div>
                                                 </div>
@@ -55,15 +55,12 @@ export default class Profile extends React.Component {
                                     <Divider />
                                     <Meta  
                                         style={{ marginTop: 35 }}
-                                        title={<h4>Location</h4>}
+                                        title={<h4 className={HEADER_TITLE}>{LOCATION_INFO_TEXT}</h4>}
                                         description={
-                                            // <Table columns={columns} dataSource={data} 
-                                            //   size="small" bordered={false} pagination={false} row={false}
-                                            // />
                                             LOCATION.map(location => (
-                                                <div key={location.title} style={{ marginTop: 15 }}>
+                                                <div key={location.title} className={DATA_TITLE}>
                                                     <b>{location.title}</b>                                       
-                                                    <div style={{ float: "right", paddingLeft: 20 }}>
+                                                    <div>
                                                         {location.description}
                                                     </div>
                                                 </div>

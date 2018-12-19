@@ -38,26 +38,46 @@ export const FAKE_USER = {
 export const USER_PAGE = {
     CLASSNAMES: {
         BASIC_INFO: 'basic-info',
-        CONTACT_INFO: 'contact-info',
-        INFO_LAYOUT: 'info-layout', 
-        INFO_ROW: 'info-row',
-        LOCATION_INFO: 'location-info',
-        PROFILE_INFO: 'profile-info',
-        USER_INFO_CONTENT: 'user-info-content',
+        BIG_CARD: 'big-card',
+        BIG_CONTENT: 'big-content',
+        BIG_LAYOUT: 'big-layout',
+        CARD_HEADER: 'card-header',
+        DATA_TITLE: 'data-title',
+        HEADER_TITLE: 'header-title',
+        INNER_CARD: 'inner-card',
+        SIDER: 'sider',
+        SM_CONTENT: 'sm-content',
     },
     STRINGS: {
         CENTER: 'center',
         FLEX: 'flex',
+        FOLDER: 'folder',
+        INFO_CIRCLE: 'info-circle',
+        INLINE: 'inline',
         ITEM_LAYOUT: 'horizontal',
+        MENU: 'menu',
+        MESSAGE: 'message',
+        NOTIFICATION: 'notification',
         ORIENTATION: 'left',
+        SETTING: 'setting',
+        SHOPPING: 'shopping',
         SM_HEADER: 'sm-header',
         SM_HEADER_DIV: 'sm-header-div',
+        SOLUTION: 'solution',
+        SQUARE: 'square',
     },
     TEXTS: {
+        ACCOUNT_INFO: 'Account Info',
         BASIC_INFO_TEXT: 'Basic Info',
-        CONTACT_INFO_TEXT: 'Contact Info',
-        LOCATION_INFO_TEXT: 'Location',
-        TITLE_TEXT: 'My Agroeasy',
+        CONTACT_INFO_TEXT: 'CONTACT INFORMATION',
+        HELP: 'Help',
+        LOCATION_INFO_TEXT: 'LOCATION',
+        MESSAGES: 'Messages',
+        NOTIFICATIONS: 'Notifications',
+        PURCHASES: 'Purchases',
+        SAVED_ITEMS: 'Saved Items',
+        SETTINGS: 'Settings',
+        USER_PROFILE: 'User Profile',
     },
 };
 
@@ -78,7 +98,7 @@ export const CONTACT = [
         description: 'joshuaobinna@gmail.com',  title: "Email:",
     },
     {
-        description: +2347061589692,  title: "PhoneNumber:",
+        description: '+2347061589692',  title: "Phone:",
     },
 ];
 
@@ -87,30 +107,10 @@ export const LOCATION = [
         description:  '24, Wilkie Crescent, Ikeja', title: "Address:", 
     },
     {
-        description: "Lagos", title: 'city:',
+        description: "Lagos", title: 'City:',
     },
     {
-        description: "Nigeria", title: 'country:',
+        description: "Nigeria", title: 'Country:',
     },
 ];
 
-export const columns = [{
-    dataIndex: 'name',
-    title: 'Location Info',
-}, 
-{
-    dataIndex: 'address',
-}];
-export const data = [{
-    address: 'New York No. 1 Lake Park',
-    name: 'Address',
-},
-{
-    address: 'Lagos',
-    name: 'City',
-},
-{
-    address: 'Nigeria',
-    name: 'Country',
-},
-];
