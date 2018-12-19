@@ -1,4 +1,4 @@
-import SideMenu from './SideMenu';
+import UserProfile from './UserProfile';
 import './styles.css';
 
-export default { SideMenu };
+export default { UserProfile };

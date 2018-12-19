@@ -1,6 +1,7 @@
 /* links of Navibar */
 export const HOME = "/";
 export const SUPPORT = "/about/";
+export const USERPROFILE = "/userprofile/";
 export const GOODS = "/show-goods/";
 
 //app logo
@@ -43,6 +44,7 @@ export const NAVIBAR = {
     NAV_MODE: "horizontal",
     NAV_THEME: "dark",
     SUPPORT_TEXT: "Support",
+    USER_PROFILE: "User Profile",
 };
 
 //strings from Home.js

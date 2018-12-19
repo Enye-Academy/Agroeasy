@@ -16,12 +16,12 @@ export default class UserInfo extends React.Component {
                 <Content className={USER_INFO_CONTENT}>
                     <div className="avatar">
                         <Avatar
-                            size={150} shape="circle"
                             src="./images/josh.jpg"
+                            size={150} shape="circle"
                         />
                     </div>
                     <Row className={INFO_ROW} type={FLEX} justify={CENTER}>
-                        <Col span={6} className={BASIC_INFO}>
+                        <Col span={6} className={BASIC_INFO}> 
                             <Divider orientation={ORIENTATION}>{BASIC_INFO_TEXT}</Divider>   
                             <List
                                 itemLayout={ITEM_LAYOUT}

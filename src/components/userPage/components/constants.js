@@ -63,32 +63,54 @@ export const USER_PAGE = {
 
 export const DATA = [
     {
-        BasicInfo: 'Firstname',  description: 'Josh',
+        description: 'Josh', 
+        title: "Firstname:",
     },
     {
-        BasicInfo: 'Lastname',  description: 'Obinna',
+        description: 'Obinna',  title: 'Lastname:',  
     },
     {
-        BasicInfo: 'Gender',   description: 'male',
+        description: 'male',title: 'Gender:',   
     },
 ];
 export const CONTACT = [
     {
-        contact: "Address", description:  '24, Wilkie Crescent, Ikeja',
+        description: 'joshuaobinna@gmail.com',  title: "Email:",
     },
     {
-        contact: "Email",   description: 'joshuaobinna@gmail.com',
-    },
-    {
-        contact: "PnoneNumber", description: +2347061589692,
+        description: +2347061589692,  title: "PhoneNumber:",
     },
 ];
 
 export const LOCATION = [
     {
-        description: "Lagos", title: 'city',
+        description:  '24, Wilkie Crescent, Ikeja', title: "Address:", 
     },
     {
-        description: "Nigeria", title: 'country',
+        description: "Lagos", title: 'city:',
     },
+    {
+        description: "Nigeria", title: 'country:',
+    },
+];
+
+export const columns = [{
+    dataIndex: 'name',
+    title: 'Location Info',
+}, 
+{
+    dataIndex: 'address',
+}];
+export const data = [{
+    address: 'New York No. 1 Lake Park',
+    name: 'Address',
+},
+{
+    address: 'Lagos',
+    name: 'City',
+},
+{
+    address: 'Nigeria',
+    name: 'Country',
+},
 ];
