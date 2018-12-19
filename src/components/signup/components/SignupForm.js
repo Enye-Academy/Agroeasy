@@ -50,16 +50,6 @@ function generateSignupInputs(decorator) {
 function handleChange(value) {
     return value;
 }
-/* 
-function createCategories() {
-    return PRODUCTS.map(product => {
-        const { value, category } = product;
-
-        return (
-            <Option value={value}>{category}</Option>
-        );
-    });
-} */
 
 class SignupModal extends React.Component {
     state = {
@@ -76,6 +66,9 @@ class SignupModal extends React.Component {
         const { form, onCancel, onCreate, visible } = this.props;
         const { getFieldDecorator } = form;
         const { isProducer } = this.state;
+        const createCategories = PRODUCTS.map(({ category, value }) =>
+            <Option key={value} >{category}</Option> 
+        );
 
         return (
             <Modal
@@ -121,12 +114,7 @@ class SignupModal extends React.Component {
                                                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                         }
                                 >
-                                    {
-                                        PRODUCTS.map(({ category, value }) => {
-                                            <option value = {value}>{category}</option>;
-                                        })
-                                    }
-  
+                                    {createCategories}
                                 </Select>
                             )
                         }

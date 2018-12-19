@@ -77,27 +77,55 @@ export const INPUTS = [
 
 export const PRODUCTS = [
     {
-        category: "rice",
-        value: "rice",
+        category: "Agrochemicals",
+        value: "agrochemicals",
     },
     {
-        category: "vegetable",
-        value: "vegetable",
-    },
-    {
-        category: "beans",
+        category: "Beans",
         value: "beans",
     },
     {
-        category: "grains",
+        category: "Fruits",
+        value: "fruits",
+    },
+    {
+        category: "Grains",
         value: "grains",
     },
     {
-        category: "wheat",
+        category: "Nuts",
+        value: "nuts",
+    },
+    {
+        category: "Pesticides",
+        value: "pesticides",
+    },
+    {
+        category: "Plants",
+        value: "plants",
+    },
+    {
+        category: "Rice",
+        value: "rice",
+    },
+    {
+        category: "Seeds",
+        value: "seeds",
+    },
+    {
+        category: "Seedlings",
+        value: "seedlingss",
+    },
+    {
+        category: "Vegetable",
+        value: "vegetable",
+    },
+    {
+        category: "Wheat",
         value: "wheat",
     },
     {
-        category: "other",
+        category: "Other",
         value: "other",
     },
 ];
