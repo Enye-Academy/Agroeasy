@@ -104,7 +104,7 @@ export const PRODUCTS = [
         category: "Beans",
         value: "beans",
     },
-    {
+    {    
         category: "Fruits",
         value: "fruits",
     },
