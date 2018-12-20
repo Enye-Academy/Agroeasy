@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Icon, Layout, Menu } from 'antd';
 
 import { LOGO, NAVBAR } from './constants';
-import Categories from './Categories';
 
 const { SOURCE, WIDTH } = LOGO;
 const { LINKS: { HOME }, 
@@ -24,9 +23,7 @@ export default class Navbar extends React.Component {
                                     {HOME_TEXT}
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item className="nav-items">
-                                <Categories />
-                            </Menu.Item>
+                           
                             <Menu.Item className="nav-items">
                                 {FAQS}
                             </Menu.Item>

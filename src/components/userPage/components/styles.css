@@ -1,17 +1,3 @@
-.sider-ul {
-    margin-right: 50px;
-    margin-bottom: 90px;
-    margin-top: 90px;
-    text-align: center; 
-}
-
-.sider-li {
-    color: grey;
-    font-size: 15px;
-    font-weight: 500;
-    margin-top: 7px; 
-}
-
 /*
 Navbar Component
 */
@@ -87,18 +73,17 @@ Navbar Component
     padding-left: 40px;
 }
 /**UserProfile.js */
-.big-content {
-    padding: 0 50px;
-}
+
 .big-layout {
     background: #fff;  
     padding: 24px 0;
 }
 .sider {
-    background: #fff;
+
 }
 .menu {
     height: 100%;
+    padding-top: 35%;
 }
 .sm-content {
     min-height: 280; 

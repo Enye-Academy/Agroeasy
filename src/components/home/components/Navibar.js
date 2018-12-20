@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar, Col, Dropdown, Layout, Menu, Row } from 'antd';
+import { Avatar,  Dropdown, Layout, Menu } from 'antd';
 
 import ContactUs from './ContactUs';
 import { components as SigninComponents } from '../../signin';
@@ -20,36 +20,35 @@ const { Signup } = SignupComponents;
 
 export default class Navibar extends React.Component {
     render() {
-        const menu = (
+        const userprofile = (
             <Menu>
                 <Menu.Item>
                     <Link to={USERPROFILE}>{USER_PROFILE}</Link>
                 </Menu.Item>
+                <Menu.Item>Sign out</Menu.Item>
             </Menu>
         );
         return (
             <Layout>
                 <Header className={MAIN_NAV}>
-                    <Row type="flex" justify="center">
-                        <Col>
-                            <div><Link to={HOME}><img src={SOURCE} width={WIDTH} /></Link>
-                                <Menu theme={NAV_THEME} mode={NAV_MODE} className={FLOAT_NAV} >
-                                    <Menu.Item>
-                                        <Link to={HOME} className={NAV_LINK}>{HOME_TEXT}</Link>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <Link to={GOODS} className={NAV_LINK}>{GOODS_TEXT}</Link>
-                                    </Menu.Item>
-                                    <Menu.Item className={NAV_LINK}><Signin /></Menu.Item>
-                                    <Menu.Item className={NAV_LINK}><Signup /></Menu.Item>
-                                    <Menu.Item className={NAV_LINK}><ContactUs /></Menu.Item>
-                                    <Dropdown overlay={menu}>
-                                        <Avatar icon="user" className="avatar-dropdown" />
-                                    </Dropdown>
-                                </Menu>
-                            </div>
-                        </Col>
-                    </Row>
+                    <div>
+                        <Link to={HOME}><img src={SOURCE} width={WIDTH} /></Link>
+                        <Menu theme={NAV_THEME} mode={NAV_MODE} className={FLOAT_NAV} >
+                            <Menu.Item>
+                                <Link to={HOME} className={NAV_LINK}>{HOME_TEXT}</Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Link to={GOODS} className={NAV_LINK}>{GOODS_TEXT}</Link>
+                            </Menu.Item>
+                            <Menu.Item className={NAV_LINK}><Signin /></Menu.Item>
+                            <Menu.Item className={NAV_LINK}><Signup /></Menu.Item>
+                            <Menu.Item className={NAV_LINK}><ContactUs /></Menu.Item>
+                            <Dropdown overlay={userprofile}>
+                                <Avatar icon="user" className="avatar-dropdown" />
+                            </Dropdown>
+                        </Menu>
+                    </div>
+                        
                 </Header>
             </Layout>
         );
