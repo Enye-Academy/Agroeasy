@@ -10,7 +10,7 @@ const { CLASSNAMES: { MENU },
 
 export default class SideMenu extends React.Component {
     render() {
-        return( 
+        return(
             <Menu
                 className={MENU}
                 theme="dark"
@@ -40,7 +40,6 @@ export default class SideMenu extends React.Component {
                     <span><Icon type={SOLUTION} />{HELP}</span>
                 </Menu.Item>
             </Menu>
-                        
         );
     }
 }

@@ -73,17 +73,22 @@ Navbar Component
     padding-left: 40px;
 }
 /**UserProfile.js */
-
+.big-content {
+    background: white;
+    height: 100%;
+}
 .big-layout {
-    background: #fff;  
-    padding: 24px 0;
+    background: white;  
+    padding: 40px 0;
+    margin-top: 1%;
 }
 .sider {
-
+    background: white;
+   
 }
 .menu {
     height: 100%;
-    padding-top: 35%;
+    padding-top: 20px;
 }
 .sm-content {
     min-height: 280; 
