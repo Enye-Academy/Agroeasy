@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {  Checkbox, Form, Input, Modal, Radio, Select } from 'antd';
+import { Form, Input, Modal, Radio, Select } from 'antd';
 
-import { formItemLayout, INPUTS, PRODUCTS, SIGNUP_STRINGS } from './constants';
+import { formItemLayout, INPUTS, PRODUCTS, SIGNUP_STRINGS } from '../constants';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 const {
-    AGREEMENT,
     CATEGORIES,
-    CLASSNAME_AGREEMENT,
     CLASSNAME_ITTEM1,
     CLASSNAME_RADIOBUTTONS,
     CLASSNAME_SCROLLBAR,
@@ -18,7 +16,6 @@ const {
     NO,
     PRODUCER,
     PRODUCT_TYPE,
-    READ,
     SMALL,
     SOLID,
     TITLE,
@@ -77,7 +74,7 @@ class SignupModal extends React.Component {
                 okText={TITLE}
                 onCancel={onCancel}
                 onOk={onCreate}
-                className= {CLASSNAME_SCROLLBAR}
+                className={CLASSNAME_SCROLLBAR}
             >
                 <Form>
                     <FormItem className={CLASSNAME_ITTEM1}>
@@ -119,29 +116,14 @@ class SignupModal extends React.Component {
                             )
                         }
                     </FormItem>
-                
                     }
-
                     {generateSignupInputs(getFieldDecorator)}
-                    <FormItem
-                        className={CLASSNAME_AGREEMENT}
-                    >
-                        {getFieldDecorator("agreement", {
-                            valuePropName: "checked",
-                        })(
-                            <Checkbox>
-                                {READ} 
-                                <a href="">
-                                    {AGREEMENT}
-                                </a>
-                            </Checkbox>
-                        )}
-                    </FormItem>
                 </Form>
             </Modal>
         );
     }
 }
+
 const SignupForm = Form.create()(SignupModal);
 
 SignupModal.propTypes = {
@@ -152,3 +134,4 @@ SignupModal.propTypes = {
 };
 
 export default SignupForm;
+

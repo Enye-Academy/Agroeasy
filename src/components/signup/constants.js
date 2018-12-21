@@ -1,8 +1,6 @@
 /* Signup Form Strings*/
 export const SIGNUP_STRINGS = {
-    AGREEMENT: "agreement",
     CATEGORIES: "Select Categories",
-    CLASSNAME_AGREEMENT: "agreementQuote",
     CLASSNAME_FORM: "signupForm",
     CLASSNAME_ITTEM1: "radiogroupform",
     CLASSNAME_RADIOBUTTONS: "radiobuttons",
@@ -13,7 +11,7 @@ export const SIGNUP_STRINGS = {
     PRIMARY: "primary",
     PRODUCER: "Are you a producer?",
     PRODUCT_TYPE: "Product Type",
-    READ: "I have read the ",
+    REGISTER: "Register",
     SMALL: "small",
     SOLID: "solid",
     TITLE: "Sign up",
@@ -149,3 +147,4 @@ export const PRODUCTS = [
         value: "other",
     },
 ];
+export const SIGNUP_URL = 'http://localhost:4000/account/signup';
