@@ -20,7 +20,7 @@ const { Signup } = SignupComponents;
 
 export default class Navibar extends React.Component {
     render() {
-        const userprofile = (
+        const userMenu = (
             <Menu>
                 <Menu.Item>
                     <Link to={USERPROFILE}>{USER_PROFILE}</Link>
@@ -43,7 +43,7 @@ export default class Navibar extends React.Component {
                             <Menu.Item className={NAV_LINK}><Signin /></Menu.Item>
                             <Menu.Item className={NAV_LINK}><Signup /></Menu.Item>
                             <Menu.Item className={NAV_LINK}><ContactUs /></Menu.Item>
-                            <Dropdown overlay={userprofile}>
+                            <Dropdown overlay={userMenu}>
                                 <Avatar icon="user" className="avatar-dropdown" />
                             </Dropdown>
                         </Menu>
