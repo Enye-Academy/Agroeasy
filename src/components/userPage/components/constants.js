@@ -37,21 +37,28 @@ export const FAKE_USER = {
 //userpage string
 export const USER_PAGE = {
     CLASSNAMES: {
+        AVATAR: 'avatar',
+        AVATAR_CARD: 'avatar-card',
         BASIC_INFO: 'basic-info',
         BIG_CARD: 'big-card',
         BIG_CONTENT: 'big-content',
         BIG_LAYOUT: 'big-layout',
         CARD_HEADER: 'card-header',
+        CARD_META: 'card-meta',
         DATA_TITLE: 'data-title',
         HEADER_TITLE: 'header-title',
+        INFO_CARD: 'info-card',
         INNER_CARD: 'inner-card',
         ITEM_LAYOUT: 'horizontal',
         MENU: 'menu',
+        PROFILE_CONTENT: 'profile-content',
         SIDER: 'sider',
         SM_CONTENT: 'sm-content',
     },
+    PROFILE_PIX: "./images/josh.jpg",
     STRINGS: {
         CENTER: 'center',
+        DARK: 'dark',
         FLEX: 'flex',
         FOLDER: 'folder',
         INFO_CIRCLE: 'info-circle',
@@ -65,6 +72,7 @@ export const USER_PAGE = {
         SM_HEADER_DIV: 'sm-header-div',
         SOLUTION: 'solution',
         SQUARE: 'square',
+        START: 'start',
     },
     TEXTS: {
         ACCOUNT_INFO: 'Account Info',

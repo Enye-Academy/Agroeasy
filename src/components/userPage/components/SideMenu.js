@@ -3,9 +3,12 @@ import { Menu, Icon } from 'antd';
 
 import { USER_PAGE } from './constants';
 
-const { CLASSNAMES: { MENU },
-    STRINGS: { FOLDER, INFO_CIRCLE, INLINE, MESSAGE, NOTIFICATION, SETTING, SHOPPING, SOLUTION },
-    TEXTS: { ACCOUNT_INFO, MESSAGES, HELP, NOTIFICATIONS, PURCHASES, SAVED_ITEMS, SETTINGS },
+const { 
+    CLASSNAMES: { MENU },
+    STRINGS: { DARK, FOLDER, INFO_CIRCLE, INLINE, MESSAGE, 
+        NOTIFICATION, SETTING, SHOPPING, SOLUTION },
+    TEXTS: { ACCOUNT_INFO, MESSAGES, HELP, NOTIFICATIONS, 
+        PURCHASES, SAVED_ITEMS, SETTINGS },
 } = USER_PAGE;
 
 export default class SideMenu extends React.Component {
@@ -13,7 +16,7 @@ export default class SideMenu extends React.Component {
         return(
             <Menu
                 className={MENU}
-                theme="dark"
+                theme={DARK}
                 mode={INLINE}
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}

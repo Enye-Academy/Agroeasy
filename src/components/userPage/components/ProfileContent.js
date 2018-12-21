@@ -3,14 +3,17 @@ import { Col, Row } from 'antd';
 
 import UserAvatar from './UserAvatar';
 import UserInfo from './UserInfo';
+import { USER_PAGE } from './constants';
+
+const { CLASSNAMES: { PROFILE_CONTENT }, TEXTS: { FLEX, START } } = USER_PAGE;
 
 class ProfileContent extends React.Component {
     render() {
         return(
-            <div style={{ padding: 60 }}>
-                <Row type="flex" justify="start" gutter={3}>
+            <div >
+                <Row type={FLEX} justify={START} gutter={3} className={PROFILE_CONTENT}>
                     <Col span={6}><UserAvatar /></Col>
-                    <Col span={14} style={{ textAlign: 'left' }} end="xs"><UserInfo /></Col>
+                    <Col span={15}><UserInfo /></Col>
                 </Row>
             </div>
         )

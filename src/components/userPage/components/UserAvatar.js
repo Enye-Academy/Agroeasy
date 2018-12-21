@@ -4,7 +4,8 @@ import { Avatar, Card } from 'antd';
 import { DATA, USER_PAGE } from './constants';
 
 const { Meta } = Card;
-const { CLASSNAMES: { BASIC_INFO,HEADER_TITLE }, 
+const { CLASSNAMES: { AVATAR, AVATAR_CARD, BASIC_INFO,HEADER_TITLE },
+    PROFILE_PIX, 
     STRINGS: { SQUARE },
     TEXTS: { BASIC_INFO_TEXT } } = USER_PAGE;
 
@@ -12,8 +13,12 @@ class UserAvatar extends React.Component {
     render() {
         return(
             <div>
-                <Avatar src="./images/josh.jpg" size={170} shape={SQUARE} style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
-                <Card bordered={false}   style={{ margin: -25, paddingTop: 24 }}> 
+                <Avatar
+                    className={AVATAR}
+                    src={PROFILE_PIX} 
+                    size={170} shape={SQUARE}
+                />
+                <Card bordered={false} className={AVATAR_CARD}> 
                     <Meta 
                         title={<h4 className={HEADER_TITLE}>{BASIC_INFO_TEXT}</h4>}
                         description={
