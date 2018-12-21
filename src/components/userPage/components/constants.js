@@ -68,7 +68,7 @@ export const USER_PAGE = {
     },
     TEXTS: {
         ACCOUNT_INFO: 'Account Info',
-        BASIC_INFO_TEXT: 'Basic Info',
+        BASIC_INFO_TEXT: 'BASIC INFORMATION',
         CONTACT_INFO_TEXT: 'CONTACT INFORMATION',
         HELP: 'Help',
         LOCATION_INFO_TEXT: 'LOCATION',

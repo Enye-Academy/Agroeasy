@@ -31,10 +31,11 @@ Navbar Component
 /*UserInfo */
 .header-title {
     color: darkgray;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: bold;
 }
 .data-title {
-    margin-top: 15px;
+    margin-top: 22px;
     margin-bottom: 19.2px;  
 }
 .data-title div {
@@ -55,7 +56,7 @@ Navbar Component
 .basic-info div {
     float: right;
     font-size: 13px;
-    padding-right: 24px; 
+    padding-right: 40px; 
 }
 .big-card {
     background-color: DodgerBlue;
@@ -75,7 +76,6 @@ Navbar Component
 /**UserProfile.js */
 .big-content {
     background: white;
-    height: 100%;
 }
 .big-layout {
     background: white;  
@@ -87,10 +87,9 @@ Navbar Component
    
 }
 .menu {
-    height: 100%;
+    height: 126%;
     padding-top: 20px;
 }
 .sm-content {
-    min-height: 280; 
-    padding: 0 24px;
+    padding: 0 14px;
 }
