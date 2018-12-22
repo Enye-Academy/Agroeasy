@@ -16,7 +16,7 @@ class ProfileContent extends React.Component {
                     <Col span={15}><UserInfo /></Col>
                 </Row>
             </div>
-        )
+        );
     }
 }
 

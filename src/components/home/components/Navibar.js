@@ -8,7 +8,7 @@ import { components as SignupComponents } from '../../signup/';
 import { GOODS, HOME, LOGO, NAVIBAR, USERPROFILE } from './constants';
 
 const { GOODS_TEXT, HOME_TEXT, FLOAT_NAV, MAIN_NAV, NAV_LINK, NAV_MODE,
-    NAV_THEME, USER_PROFILE } = NAVIBAR;
+    NAV_THEME, SIGN_OUT, USER_PROFILE } = NAVIBAR;
 const { SOURCE, WIDTH } = LOGO;
 const { Header } = Layout;
 const { Signin } = SigninComponents;
@@ -25,7 +25,7 @@ export default class Navibar extends React.Component {
                 <Menu.Item>
                     <Link to={USERPROFILE}>{USER_PROFILE}</Link>
                 </Menu.Item>
-                <Menu.Item>Sign out</Menu.Item>
+                <Menu.Item>{SIGN_OUT}</Menu.Item>
             </Menu>
         );
         return (

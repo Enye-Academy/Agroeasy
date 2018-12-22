@@ -43,6 +43,7 @@ export const NAVIBAR = {
     NAV_LINK: "navLink",
     NAV_MODE: "horizontal",
     NAV_THEME: "dark",
+    SIGN_OUT: 'Sign Out',
     SUPPORT_TEXT: "Support",
     USER_PROFILE: "User Profile",
 };
