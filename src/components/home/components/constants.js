@@ -44,6 +44,7 @@ export const SEARCH = {
 export const NAVBAR = {
     MAIN_NAV: "main-nav",
     MARKET_TEXT: "Market",
+    NAV_MENU: "nav-menu",
     NAV_MODE: "horizontal",
     NAV_THEME: "dark",
 };

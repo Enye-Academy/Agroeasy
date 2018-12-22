@@ -10,6 +10,7 @@ import { HOME, LOGO, NAVBAR, PROFILE, USER_AVATAR } from './constants';
 const {
     MAIN_NAV,
     MARKET_TEXT,
+    NAV_MENU,
     NAV_MODE,
     NAV_THEME,
 } = NAVBAR;
@@ -34,7 +35,7 @@ export default class Navibar extends React.Component {
     render() {
         return (
             <Header className={MAIN_NAV}>
-                <Menu theme={NAV_THEME} mode={NAV_MODE} className='nav-menu' >
+                <Menu theme={NAV_THEME} mode={NAV_MODE} className={NAV_MENU} >
                     <Menu.Item className={CONTAINER}>
                         <Link to={HOME}>
                             <Avatar
