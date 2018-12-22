@@ -3,25 +3,23 @@
     max-height:85%;
 }
 
-  .agreementQuote {
+.agreementQuote {
     font-size: 14px;
     margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
-  }
+}
 
-  .radiogroupform{
-    font-size: 20px;
-    font-weight: bold;
-    color: #006400;
+.radiogroupform{
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .radiobuttons{
+.radiobuttons{
     font-size: 14px;
     margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
-  }
+}

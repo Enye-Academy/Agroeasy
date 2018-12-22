@@ -23,9 +23,9 @@ class Signup extends React.Component {
     handleCreate = () => {
         const form = this.formRef.props.form;
         const { signupRequest } = this.props.actions;
-        form.validateFields((err, values ) => {
-            if (err) {
-                return err;
+        form.validateFields((error, values ) => {
+            if (error) {
+                return error;
             }
             form.resetFields();         
             const user = {

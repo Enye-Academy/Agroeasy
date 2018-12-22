@@ -2,20 +2,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Form, Input, Modal, Radio, Select } from 'antd';
 
-import { formItemLayout, INPUTS, PRODUCTS, SIGNUP_STRINGS } from '../constants';
+import { FORM_ITEM_LAYOUT, INPUTS, PRODUCTS, SIGNUP_STRINGS } from '../constants';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 const {
     CATEGORIES,
-    CLASSNAME_ITTEM1,
-    CLASSNAME_RADIOBUTTONS,
-    CLASSNAME_SCROLLBAR,
     MESSAGE,
     MODE,
     NO,
     PRODUCER,
     PRODUCT_TYPE,
+    RADIO_BUTTONS,
+    RADIO_GROUP_FORM,
+    SCROLLBAR,
     SMALL,
     SOLID,
     TITLE,
@@ -29,7 +29,7 @@ function generateSignupInputs(decorator) {
         return (
             <FormItem
                 key={field}
-                {...formItemLayout}
+                {...FORM_ITEM_LAYOUT}
                 label={label}
             >
                 {
@@ -46,6 +46,12 @@ function generateSignupInputs(decorator) {
 
 function handleChange(value) {
     return value;
+}
+
+function generateFilterOption(input, option) { 
+    const children = option.props.children.toLowerCase();
+    const currInput = input.toLowerCase();
+    return children.indexOf(currInput) >= 0;
 }
 
 class SignupModal extends React.Component {
@@ -74,48 +80,45 @@ class SignupModal extends React.Component {
                 okText={TITLE}
                 onCancel={onCancel}
                 onOk={onCreate}
-                className={CLASSNAME_SCROLLBAR}
+                className={SCROLLBAR}
             >
                 <Form>
-                    <FormItem className={CLASSNAME_ITTEM1}>
+                    <FormItem className={RADIO_GROUP_FORM}>
                         {PRODUCER}
                         <Radio.Group 
                             defaultValue={false}
                             buttonStyle={SOLID}
                             onChange={this.toggleIsProducer}
                             size={SMALL}
-                            className={CLASSNAME_RADIOBUTTONS}
+                            className={RADIO_BUTTONS}
                         >
                             <Radio.Button value={true}>{YES}</Radio.Button>
                             <Radio.Button value={false}>{NO}</Radio.Button>
                         </Radio.Group>
                     </FormItem>
-                    {isProducer &&
-                    <FormItem
-                        {...formItemLayout}
-                        label={PRODUCT_TYPE}
-                    >
-                        {
-                            getFieldDecorator('productType', {
-                                rules:
-                                [{ message: { MESSAGE }, required: true }],
-                            })(
-                                <Select
-                                    showSearch
-                                    mode={MODE}
-                                    placeholder={CATEGORIES}
-                                    onChange={handleChange}
-                                    filterOption=
-                                        {
-                                            (input, option) => 
-                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
-                                >
-                                    {createCategories}
-                                </Select>
-                            )
-                        }
-                    </FormItem>
+                    {
+                        isProducer &&
+                        <FormItem
+                            {...FORM_ITEM_LAYOUT}
+                            label={PRODUCT_TYPE}
+                        >
+                            {
+                                getFieldDecorator('productType', {
+                                    rules:
+                                    [{ message: MESSAGE, required: true }],
+                                })(
+                                    <Select
+                                        showSearch
+                                        mode={MODE}
+                                        placeholder={CATEGORIES}
+                                        onChange={handleChange}
+                                        filterOption={generateFilterOption}
+                                    >
+                                        {createCategories}
+                                    </Select>
+                                )
+                            }
+                        </FormItem>
                     }
                     {generateSignupInputs(getFieldDecorator)}
                 </Form>

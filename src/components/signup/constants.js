@@ -1,24 +1,23 @@
 /* Signup Form Strings*/
 export const SIGNUP_STRINGS = {
     CATEGORIES: "Select Categories",
-    CLASSNAME_FORM: "signupForm",
-    CLASSNAME_ITTEM1: "radiogroupform",
-    CLASSNAME_RADIOBUTTONS: "radiobuttons",
-    CLASSNAME_SCROLLBAR: "scrollBar",
     MESSAGE: "Please select category",
     MODE: "multiple",
     NO: "No",
     PRIMARY: "primary",
     PRODUCER: "Are you a producer?",
     PRODUCT_TYPE: "Product Type",
+    RADIO_BUTTONS: "radiobuttons",
+    RADIO_GROUP_FORM: "radiogroupform",
     REGISTER: "Register",
+    SCROLLBAR: "scrollBar",
     SMALL: "small",
     SOLID: "solid",
     TITLE: "Sign up",
     YES: "Yes",
 };
 
-export const formItemLayout = {
+export const FORM_ITEM_LAYOUT = {
     labelCol: {
         sm: { span: 8 },
         xs: { span: 20 },
