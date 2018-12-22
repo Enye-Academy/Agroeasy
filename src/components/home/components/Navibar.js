@@ -5,52 +5,57 @@ import { Avatar,  Dropdown, Layout, Menu } from 'antd';
 import ContactUs from './ContactUs';
 import { components as SigninComponents } from '../../signin';
 import { components as SignupComponents } from '../../signup/';
-import { GOODS, HOME, LOGO, NAVIBAR, USERPROFILE } from './constants';
+import { HOME, LOGO, NAVBAR, PROFILE, USER_AVATAR } from './constants';
 
-const { GOODS_TEXT, HOME_TEXT, FLOAT_NAV, MAIN_NAV, NAV_LINK, NAV_MODE,
-    NAV_THEME, USER_PROFILE } = NAVIBAR;
-const { SOURCE, WIDTH } = LOGO;
+const {
+    MAIN_NAV,
+    MARKET_TEXT,
+    NAV_MODE,
+    NAV_THEME,
+} = NAVBAR;
+const { AVATAR, SHAPE, SIZE, SOURCE } = LOGO;
+const { CONTAINER, ICON_TYPE, SIGN_OUT, USER_DROP_DOWN, USER_PROFILE } = USER_AVATAR;
 const { Header } = Layout;
 const { Signin } = SigninComponents;
 const { Signup } = SignupComponents;
 
+const UserMenu = (
+    <Menu>
+        <Menu.Item key={USER_PROFILE}>
+            <Link to={PROFILE}>{USER_PROFILE}</Link>
+        </Menu.Item>
+        <Menu.Item key={SIGN_OUT}>{SIGN_OUT}</Menu.Item>
+    </Menu>
+);
 /*
  * this is the the navigation bar at the top of the home page
  */
-
 export default class Navibar extends React.Component {
     render() {
-        const userMenu = (
-            <Menu>
-                <Menu.Item>
-                    <Link to={USERPROFILE}>{USER_PROFILE}</Link>
-                </Menu.Item>
-                <Menu.Item>Sign out</Menu.Item>
-            </Menu>
-        );
         return (
-            <Layout>
-                <Header className={MAIN_NAV}>
-                    <div>
-                        <Link to={HOME}><img src={SOURCE} width={WIDTH} /></Link>
-                        <Menu theme={NAV_THEME} mode={NAV_MODE} className={FLOAT_NAV} >
-                            <Menu.Item>
-                                <Link to={HOME} className={NAV_LINK}>{HOME_TEXT}</Link>
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Link to={GOODS} className={NAV_LINK}>{GOODS_TEXT}</Link>
-                            </Menu.Item>
-                            <Menu.Item className={NAV_LINK}><Signin /></Menu.Item>
-                            <Menu.Item className={NAV_LINK}><Signup /></Menu.Item>
-                            <Menu.Item className={NAV_LINK}><ContactUs /></Menu.Item>
-                            <Dropdown overlay={userMenu}>
-                                <Avatar icon="user" className="avatar-dropdown" />
-                            </Dropdown>
-                        </Menu>
-                    </div>
-                        
-                </Header>
-            </Layout>
+            <Header className={MAIN_NAV}>
+                <Menu theme={NAV_THEME} mode={NAV_MODE} className='nav-menu' >
+                    <Menu.Item className={CONTAINER}>
+                        <Link to={HOME}>
+                            <Avatar
+                                className={AVATAR}
+                                src={SOURCE}
+                                size={SIZE}
+                                shape={SHAPE}
+                            />
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to={HOME}>{MARKET_TEXT}</Link>
+                    </Menu.Item>
+                    <Menu.Item><Signin /></Menu.Item>
+                    <Menu.Item><Signup /></Menu.Item>
+                    <Menu.Item><ContactUs /></Menu.Item>
+                </Menu>
+                <Dropdown overlay={UserMenu} className={USER_DROP_DOWN}>
+                    <Avatar icon={ICON_TYPE} />
+                </Dropdown>
+            </Header>
         );
     }
-} 
+}

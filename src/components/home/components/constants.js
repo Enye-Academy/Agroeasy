@@ -1,17 +1,24 @@
 /* links of Navibar */
 export const HOME = "/";
 export const SUPPORT = "/about/";
-export const USERPROFILE = "/userprofile/";
-export const GOODS = "/show-goods/";
+export const PROFILE = "/profile/";
+export const MARKET = "/market/";
 
 //app logo
 export const LOGO = {
-    SOURCE:  "/AgroeasyLogo.png",
-    WIDTH: "80px",
+    AVATAR: "home-avatar",
+    SHAPE: "square",
+    SIZE: "large",
+    SOURCE: "/AgroeasyLogo.png",
 };
 
-//string & texts from ContactUs.js
-export const NAV_LINKS = "navLink";
+export const USER_AVATAR = {
+    CONTAINER: "avatar-container",
+    ICON_TYPE: "user",
+    SIGN_OUT: "Sign Out",
+    USER_DROP_DOWN: "user-avatar-drop-down",
+    USER_PROFILE: "User Profile",
+};
 
 export const CONTACT_US = {
     BACK: "back",
@@ -34,17 +41,11 @@ export const SEARCH = {
 };
 
 //strings from Navibar.js
-export const NAVIBAR = {
-    FLOAT_NAV: "link-position",
-    GOODS_TEXT: "Goods",
-    HOME_TEXT: "Home",
+export const NAVBAR = {
     MAIN_NAV: "main-nav",
-    NAV_BAR: "nav-bar",
-    NAV_LINK: "navLink",
+    MARKET_TEXT: "Market",
     NAV_MODE: "horizontal",
     NAV_THEME: "dark",
-    SUPPORT_TEXT: "Support",
-    USER_PROFILE: "User Profile",
 };
 
 //strings from Home.js
