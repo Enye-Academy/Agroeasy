@@ -33,7 +33,7 @@ function* signupUser(action) {
 /**
  * @function
  * Watches for the {@link actionTypes.SIGNUP_REQUEST SIGNUP_REQUEST} action.
- * Triggers request to capture data from body
+ * Triggers signupUser
  *
  * @return {void}
  */
