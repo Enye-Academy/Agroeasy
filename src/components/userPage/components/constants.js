@@ -20,20 +20,6 @@ export const LOGO = {
     WIDTH: "60px",
 };
 
-/** 
-//Producer profile
-export const FAKE_USER = {
-    address: '24, Wilkie Crescent, Ikeja',
-    city: 'Lagos',
-    country: 'Nigeria',
-    email: 'joshuaobinna93@gmail.com',
-    firstName: 'Josh',
-    gender: 'male',
-    lastName: 'Obinna',
-    phoneNumber: '+2347061589692',
-};
-*/
-
 //userpage string
 export const USER_PAGE = {
     CLASSNAMES: {
@@ -89,36 +75,28 @@ export const USER_PAGE = {
     },
 };
 
-export const DATA = [
-    {
-        description: 'Josh', 
-        title: "Firstname:",
-    },
-    {
-        description: 'Obinna',  title: 'Lastname:',  
-    },
-    {
-        description: 'male',title: 'Gender:',   
-    },
+export const BASIC_INFOMATION = [
+    { description: 'Josh', title: "First Name:" },
+    { description: 'Obinna', title: 'Last Name:' },
+    { description: 'male', title: 'Gender:' },
 ];
 export const CONTACT = [
-    {
-        description: 'joshuaobinna@gmail.com',  title: "Email:",
-    },
-    {
-        description: '+2347061589692',  title: "Phone:",
-    },
+    { description: 'joshuaobinna@gmail.com',  title: "Email:" },
+    { description: '+2347061589692',  title: "Phone:" },
 ];
 
 export const LOCATION = [
-    {
-        description:  '24, Wilkie Crescent, Ikeja', title: "Address:", 
-    },
-    {
-        description: "Lagos", title: 'City:',
-    },
-    {
-        description: "Nigeria", title: 'Country:',
-    },
+    { description:  '24, Wilkie Crescent, Ikeja', title: "Address:" },
+    { description: "Lagos", title: 'City:' },
+    { description: "Nigeria", title: 'Country:' },
 ];
 
+export const SIDE_MENU_ITEMS = [
+    { iconType: "info-circle", label: "Account Info" },
+    { iconType: "message", label: "Meaasges" },
+    { iconType: "notification", label: "Notifications" },
+    { iconType: "shopping", label: "Purchases" },
+    { iconType: "folder", label: "Saved Items" },
+    { iconType: "setting", label: "Settings" },
+    { iconType: "solution", label: "Help" },
+];
