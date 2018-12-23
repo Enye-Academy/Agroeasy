@@ -5,7 +5,6 @@ import ProfileContent from './ProfileContent';
 import Navibar from '../../home/components/Navibar';
 import { USER_PAGE } from './constants';
 import SideMenu from './SideMenu';
-import Practice from './Practice';
 
 const { Content, Sider } = Layout;
 const { CLASSNAMES: { BIG_CONTENT, BIG_LAYOUT, SIDER, SM_CONTENT },
@@ -22,8 +21,7 @@ export default class UserProfile extends React.Component {
                             <SideMenu />
                         </Sider>
                         <Content className={SM_CONTENT}>
-                            <ProfileContent />
-                            <Practice />
+                            <ProfileContent />  
                         </Content>
                     </Layout>
                 </Content>
