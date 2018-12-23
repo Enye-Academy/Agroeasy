@@ -15,8 +15,6 @@ export default class SideMenu extends React.Component {
                 className={MENU}
                 theme={DARK}
                 mode={INLINE}
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
             >   
                 {
                     SIDE_MENU_ITEMS.map(sideMenuItem => (

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Avatar,  Dropdown, Layout, Menu } from 'antd';
 
 import ContactUs from './ContactUs';
-import { components as SigninComponents } from '../../signin';
-import { components as SignupComponents } from '../../signup/';
-import { HOME, LOGO, NAVBAR, PROFILE, USER_AVATAR } from './constants';
+import signin from '../../signin/';
+import signup from '../../signup/';
+import { GOODS, HOME, LOGO, NAVIBAR, SUPPORT } from './constants';
 
 const {
     MAIN_NAV,
@@ -17,8 +17,8 @@ const {
 const { AVATAR, SHAPE, SIZE, SOURCE } = LOGO;
 const { CONTAINER, ICON_TYPE, SIGN_OUT, USER_DROP_DOWN, USER_PROFILE } = USER_AVATAR;
 const { Header } = Layout;
-const { Signin } = SigninComponents;
-const { Signup } = SignupComponents;
+const { Signin } = signin.components;
+const { Signup } = signup.components;
 
 const UserMenu = (
     <Menu>
