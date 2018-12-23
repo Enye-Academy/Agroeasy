@@ -4,10 +4,12 @@ import { Avatar, Card } from 'antd';
 import { DATA, USER_PAGE } from './constants';
 
 const { Meta } = Card;
-const { CLASSNAMES: { AVATAR, AVATAR_CARD, BASIC_INFO,HEADER_TITLE },
+const { 
+    CLASSNAMES: { AVATAR, AVATAR_CARD, BASIC_INFO,HEADER_TITLE },
     PROFILE_PIX, 
     STRINGS: { SQUARE },
-    TEXTS: { BASIC_INFO_TEXT } } = USER_PAGE;
+    TEXTS: { BASIC_INFO_TEXT } 
+} = USER_PAGE;
 
 class UserAvatar extends React.Component {
     render() {
