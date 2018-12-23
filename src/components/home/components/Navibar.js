@@ -5,7 +5,7 @@ import { Avatar,  Dropdown, Layout, Menu } from 'antd';
 import ContactUs from './ContactUs';
 import signin from '../../signin/';
 import signup from '../../signup/';
-import { GOODS, HOME, LOGO, NAVIBAR, SUPPORT } from './constants';
+import { HOME, LOGO, NAVBAR, USER_AVATAR, PROFILE } from './constants';
 
 const {
     MAIN_NAV,
