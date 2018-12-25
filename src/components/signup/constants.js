@@ -10,7 +10,7 @@ export const SIGNUP_STRINGS = {
     RADIO_BUTTONS: "radio-buttons",
     RADIO_GROUP_FORM: "radio-group-form",
     REGISTER: "Register",
-    SCROLLBAR: "scroll-bar",
+    SCROLL_BAR: "scroll-bar",
     SMALL: "small",
     SOLID: "solid",
     TITLE: "Sign up",
