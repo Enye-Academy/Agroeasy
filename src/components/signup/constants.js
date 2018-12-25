@@ -7,17 +7,10 @@ export const SIGNUP_STRINGS = {
     PRIMARY: "primary",
     PRODUCER: "Are you a producer?",
     PRODUCT_TYPE: "Product Type",
-<<<<<<< HEAD
     RADIO_BUTTONS: "radio-buttons",
     RADIO_GROUP_FORM: "radio-group-form",
     REGISTER: "Register",
     SCROLL_BAR: "scroll-bar",
-=======
-    RADIO_BUTTONS: "radiobuttons",
-    RADIO_GROUP_FORM: "radiogroupform",
-    REGISTER: "Register",
-    SCROLLBAR: "scrollBar",
->>>>>>> master
     SMALL: "small",
     SOLID: "solid",
     TITLE: "Sign up",
