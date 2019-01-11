@@ -71,11 +71,41 @@ export default {
             const doc = await userSession.save();
 
             await bcrypt.compare(password, user.password, (error, result) => {
+                const { 
+                    address,
+                    city,
+                    country,
+                    createdAt,
+                    email,
+                    firstName,
+                    _id,
+                    lastName,
+                    phoneNumber,
+                    state,
+                    updatedAt,
+                    username, 
+                } = user;
+                const userInfo = Object.assign({}, {
+                    _id,
+                    address,
+                    city,
+                    country,
+                    createdAt,
+                    email,
+                    firstName,
+                    lastName,
+                    phoneNumber,
+                    state,
+                    updatedAt,
+                    username,
+                }); // will redo this, because i only want to take out password from the user object
+                    //how to do hint: const { password, userInfo } = user;
                 const data = result ?
                     { 
                         message: SUCCESSFUL_SIGNIN, 
                         success: true, 
-                        token: doc._id, user,
+                        token: doc._id, 
+                        user: { userInfo },
                     } : 
                     { 
                         error,
