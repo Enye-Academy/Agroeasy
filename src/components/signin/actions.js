@@ -10,7 +10,6 @@ export const signinRequest = payload => ({
     payload,
     type: SIGNIN_REQUEST,
 });
-
 /**
  * Triggers request to update redux store on success
  *
