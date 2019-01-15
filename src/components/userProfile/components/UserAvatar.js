@@ -24,10 +24,10 @@ export default class UserAvatar extends React.Component {
                     <Meta
                         title={<h4 className={HEADER_TITLE}>{BASIC_INFO_TEXT}</h4>}
                         description={
-                            BASIC_INFOMATION.map(data => (
-                                <div key={data.title} className={BASIC_INFO}>
-                                    <b>{data.title}</b>
-                                    <div>{data.description}</div>
+                            BASIC_INFOMATION.map(({ description, title }) => (
+                                <div key={title} className={BASIC_INFO}>
+                                    <b>{title}</b>
+                                    <div>{description}</div>
                                 </div>
                             ))
                         }
