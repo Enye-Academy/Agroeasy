@@ -15,5 +15,6 @@ export default {
         'updatedAt',
         'username',
     ],
+
     USER_EXIST: 'Error: Account already exist.',
 };
