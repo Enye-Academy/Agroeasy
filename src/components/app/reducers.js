@@ -18,8 +18,8 @@ export default ( state = { ...initialState }, action) => {
                 user: { ...action.data.user }
 
             };
-            break;
         default:
 
-        }
     }
+}
+ 
