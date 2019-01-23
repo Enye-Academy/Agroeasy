@@ -8,7 +8,8 @@ const initialState = {
 export default ( state = { ...initialState }, action) => {
     switch (action.type) {
         case SET_COOKIE:    {
-            const expiration = new Date().getTime()
+            const time = 12;
+            const expiration = new Date(new Date().getTime()+ time * 3600 * 1000);
             const token = action.data.token || 'testtoken';
             browser.cookies.set(token, expiration);
 
