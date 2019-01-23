@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Favicon from 'react-favicon';
 import { Provider } from 'react-redux';
 
 import router from './components/router';
@@ -9,6 +10,7 @@ const { Routes: App } = router.components;
 
 ReactDOM.render(
     <Provider store={store}>
+        <Favicon url = "/favicon.png" />
         <App />
     </Provider>,
     document.getElementById('app')
