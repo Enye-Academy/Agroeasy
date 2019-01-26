@@ -2,7 +2,7 @@ import { SET_COOKIE, REMOVE_COOKIE } from './actionTypes';
 
 const initialState = {
     loggedIn: false,
-    user: { ... }
+    // user: { ... }
 };
 
 export default ( state = { ...initialState }, action) => {
@@ -30,4 +30,3 @@ export default ( state = { ...initialState }, action) => {
         }
     }
 }
- 

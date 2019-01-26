@@ -8,6 +8,7 @@ import SigninForm from './SigninForm';
 import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
 import * as  signinSelectors from '../selectors';
+import { setCookie } from '../../app/actions';
 
 const { getMessage, getStatus } = signinSelectors;
 const { PRIMARY, TITLE } = SIGNIN_STRINGS;
@@ -52,6 +53,7 @@ class Signin extends React.Component {
 
         if(signinStatus){
             message.success(signinMessage, 5);
+            setCookie();
         } else {
             message.error(signinMessage, 5);
         }
@@ -93,7 +95,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(signinActions, dispatch),
+    actions: bindActionCreators(Object.assign({}, signinActions, setCookie), dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signin);
