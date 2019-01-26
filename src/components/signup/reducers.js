@@ -9,7 +9,7 @@ const initialState = {
   
 const signUpReducer  = (state = initialState, action) => {
     switch (action.type) {
-    case SIGNUP_REQUEST:    
+    case SIGNUP_REQUEST:
         return{
             ...state,
             data: [],
