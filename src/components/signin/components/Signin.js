@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { message } from 'antd';
 
+import * as appActions from '../../app/actions';
 import SigninForm from './SigninForm';
 import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
 import * as  signinSelectors from '../selectors';
-import { setCookie } from '../../app/actions';
 
 const { getMessage, getStatus } = signinSelectors;
 const { PRIMARY, TITLE } = SIGNIN_STRINGS;
@@ -48,12 +48,13 @@ class Signin extends React.Component {
         this.formRef = formRef;
     }
     notifySigninStatus = () => {
-        const { resetSignState } = this.props.actions;
+        const { setCookie } = this.props.actions.appActions;
+        const { resetSignState } = this.props.actions.signinActions;
         const { signinMessage, signinStatus } = this.props;
 
         if(signinStatus){
-            message.success(signinMessage, 5);
             setCookie();
+            message.success(signinMessage, 5);
         } else {
             message.error(signinMessage, 5);
         }
@@ -95,7 +96,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(Object.assign({}, signinActions, setCookie), dispatch),
+    actions: bindActionCreators({ ...signinActions, ...appActions }, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signin);
