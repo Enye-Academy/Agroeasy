@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Avatar,  Dropdown, Layout, Menu } from 'antd';
 
-import * as appActions from '../actions';
+import { removeCookie } from '../actions';
 import AppLink from './AppLink';
 import home from '../../home';
 
@@ -29,10 +29,9 @@ const UserMenu = (
         <Item key={USER_PROFILE}>
             <AppLink to={PROFILE} key={PROFILE}>{USER_PROFILE}</AppLink>
         </Item>
-        {
-            const { removeCookie } = this.props.actions
-            <Item key={SIGN_OUT}>{SIGN_OUT}</Item>
-        }
+        <Item key={SIGN_OUT}>
+            <AppLink to={HOME} key={HOME}>{SIGN_OUT}</AppLink>
+        </Item>
     </Menu>
 );
 
@@ -51,6 +50,10 @@ const items = [
  * this is the the navigation bar at the top of the home page
  */
 class Navbar extends React.Component {
+    logout = () => {
+        const { removeCookie } = this.props.actions;
+    };        
+
     render() {
 
         return (
@@ -86,7 +89,7 @@ Navbar.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(appActions, dispatch),
+    actions: bindActionCreators({ removeCookie }, dispatch),
 });
 
 export default connect(mapDispatchToProps)(Navbar);
