@@ -16,7 +16,7 @@ export default ( state = { ...initialState }, action) => {
         return {
             ...state,
             loggedIn: true,
-            user: { ...action.data.user }
+            user: { ...action.data.user },
 
         };
     }

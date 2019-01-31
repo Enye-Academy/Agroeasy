@@ -48,12 +48,11 @@ class Signin extends React.Component {
         this.formRef = formRef;
     }
     notifySigninStatus = () => {
-        const { setCookie } = this.props.actions;
-        const { resetSignState } = this.props.actions.signinActions;
+        const { resetSignState } = this.props.actions;
         const { signinStatus, siginData } = this.props;
         
         if(signinStatus !== undefined){
-            signinStatus === SUCCESS && setCookie() ? 
+            signinStatus === SUCCESS ? 
                 message.success(`${siginData.user.firstName}  ${SUCCESS_MESSAGE}`, 5):          
                 message.error(siginData.title, 5);
         }
@@ -87,7 +86,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators({ ...signinActions, setCookie }, dispatch),
+    actions: bindActionCreators(signinActions,  dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signin);

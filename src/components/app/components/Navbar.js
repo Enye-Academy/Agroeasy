@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Avatar,  Dropdown, Layout, Menu } from 'antd';
+import { Avatar, Button, Dropdown, Layout, Menu } from 'antd';
 
 import { removeCookie } from '../actions';
 import AppLink from './AppLink';
@@ -24,14 +24,16 @@ const { ContactUs } = home.components;
 const { Signin } = signin.components;
 const { Signup } = signup.components;
 
+const onClick = ({ key }) => {
+    key === {SIGN_OUT}? this.logout : ""
+};
+
 const UserMenu = (
-    <Menu>
+    <Menu onClick={onClick}>
         <Item key={USER_PROFILE}>
             <AppLink to={PROFILE} key={PROFILE}>{USER_PROFILE}</AppLink>
         </Item>
-        <Item key={SIGN_OUT}>
-            <AppLink to={HOME} key={HOME}>{SIGN_OUT}</AppLink>
-        </Item>
+        <Item key={SIGN_OUT}>{SIGN_OUT}</Item>
     </Menu>
 );
 
@@ -52,6 +54,7 @@ const items = [
 class Navbar extends React.Component {
     logout = () => {
         const { removeCookie } = this.props.actions;
+        removeCookie();
     };        
 
     render() {
