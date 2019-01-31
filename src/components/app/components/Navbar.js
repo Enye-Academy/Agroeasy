@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Avatar, Button, Dropdown, Layout, Menu } from 'antd';
+import { Avatar, Dropdown, Layout, Menu } from 'antd';
 
 import { removeCookie } from '../actions';
 import AppLink from './AppLink';
