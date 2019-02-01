@@ -24,18 +24,16 @@ const { ContactUs } = home.components;
 const { Signin } = signin.components;
 const { Signup } = signup.components;
 
-const onClick = ({ key }) => {
-    key === {SIGN_OUT}? this.logout : ""
-};
-
 const UserMenu = (
-    <Menu onClick={onClick}>
+    <Menu>
         <Item key={USER_PROFILE}>
             <AppLink to={PROFILE} key={PROFILE}>{USER_PROFILE}</AppLink>
         </Item>
-        <Item key={SIGN_OUT}>{SIGN_OUT}</Item>
+        <Item key={SIGN_OUT}>
+         {/* <a onClick={this.logout}>{SIGN_OUT}</a> */}
+         </Item>
     </Menu>
-);
+);    
 
 const items = [
     <AppLink key={AVATAR} to={HOME}>
@@ -52,10 +50,13 @@ const items = [
  * this is the the navigation bar at the top of the home page
  */
 class Navbar extends React.Component {
-    logout = () => {
-        const { removeCookie } = this.props.actions;
-        removeCookie();
-    };        
+    // logout = () => {
+    //     const { removeCookie } = this.props.actions;
+    //     removeCookie();
+    // };
+    logout(e) {
+        this.props.actions.removeCookie();
+    }
 
     render() {
 
@@ -78,9 +79,9 @@ class Navbar extends React.Component {
                     }
 
                 </Menu>
-                <Dropdown overlay={UserMenu} className={USER_DROP_DOWN}>
+                {/* <Dropdown className={USER_DROP_DOWN}>
                     <Avatar icon={ICON_TYPE} />
-                </Dropdown>
+                </Dropdown> */}
             </Header>
         );
     }
