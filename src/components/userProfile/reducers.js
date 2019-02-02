@@ -1,50 +1,30 @@
-import _cloneDeep from 'lodash.clonedeep';
+//import _cloneDeep from 'lodash.clonedeep';
 import { 
     FETCH_USER_DATA,
-    REQUEST_USER_DATA, 
-    REQUEST_USER_FAILURE, 
-    UPDATE_USER_DATA, 
-    UPDATE_FAILURE 
+    UPDATE_USER_DATA 
 } from './actionTypes';
 
 const initialState = {
     error: null,
-    isLoading: false,
-    userInfo: [],
+    userInfo: {},
 };
 
 export default (state = { ...initialState }, action ) => {
     switch(action.type){
-    case REQUEST_USER_DATA:
-        return {
-            ...state,
-            isLoading: true,
-        };
-    case FETCH_USER_DATA: {
-        const fetchedUserInfo = _cloneDeep(state.userInfo).concat([ action.data ]);
-        return {
-            ...state,
-            fetchedUserInfo,
-            isLoading:false,
-        };
-    }
 
-    case REQUEST_USER_FAILURE:
+    case FETCH_USER_DATA: 
+        //const fetchedUserInfo = _cloneDeep(state.userInfo).concat([ action.data ]);
         return {
             ...state,
-            error: action.error,
-            isLoading: false,
+            userInfo: action.data,
         };
-    case UPDATE_USER_DATA:
+
+    /*     case UPDATE_USER_DATA:
         return {
             ...state,
             updatedUserData: action.data,
         };
-    case UPDATE_FAILURE: 
-        return {
-            ...state,
-            error: action.error,
-        };
+ */
     default:
         return state;
     }

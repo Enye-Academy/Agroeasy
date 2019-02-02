@@ -1,21 +1,22 @@
-import { effects } from 'redux-saga';
-import {  REQUEST_USER_DATA } from './actionTypes';
+/* import { effects } from 'redux-saga';
+import {  FETCH_USER_DATA } from './actionTypes';
 import { USER_DATA_URL } from './constants';
 import { fetchUserData, fetchUserFailure } from './actions';
 
-function* getUserData(){
+function* getUserData(action){
     try {
-        const response = yield fetch(USER_DATA_URL, {
+        const { data } = action;
+        /*         const response = yield fetch(USER_DATA_URL, {
             headers: {
                 'Content-Type': 'application/json',
             },
             method: 'GET',
         });
-        if(response.ok){
+        if(response.ok){ 
             const data = yield response.json();
             console.log(data);
-            yield effects.put(fetchUserData(data));
-        }
+        yield effects.put(fetchUserData(data));
+        
     } catch(error){
         yield effects.put(fetchUserFailure(error));
         console.log(error);
@@ -24,7 +25,7 @@ function* getUserData(){
 
 function* watchfetchUserData(){
     try {
-        yield effects.takeLatest(REQUEST_USER_DATA, getUserData);
+        yield effects.takeLatest(FETCH_USER_DATA, getUserData);
     } catch(error){
         // eslint-disable-next-line no-console
         console.log(error);
@@ -36,3 +37,4 @@ export default function* (){
         watchfetchUserData(),
     ]);
 }
+ */

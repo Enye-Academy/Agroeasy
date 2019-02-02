@@ -2,7 +2,9 @@ import { effects } from 'redux-saga';
 import {  SIGNIN_REQUEST } from './actionTypes';
 import { SIGNIN_URL } from './constants';
 import { signinSuccess, signinFailure } from './actions';
+import userProfile from '../userProfile';
 
+const { fetchUserData } = userProfile.actions;
 /**
  * Makes a request to sign in a user
  *
@@ -22,6 +24,7 @@ function* signinUser(action){
         });
         if(response.ok){
             const data = yield response.json();
+            yield effects.put(fetchUserData(data));
             yield effects.put(signinSuccess(data));
         }
     } catch(error){

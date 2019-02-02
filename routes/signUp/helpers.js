@@ -58,4 +58,16 @@ export default {
         }
     },
     //This does not log the user in, but does create an account via API.
+
+    // updates user using id
+    userUpdate: async(req, res) => {
+        try {
+            const{ body, params:{ userId: _id } } = req;
+            const data = await User.findOneAndUpdate( _id, body, { new: true });
+    
+            return res.status(201).json({ data, status: "success" });
+        } catch (err) {
+            res.send({ err, status: "fail" });
+        }
+    },
 };
