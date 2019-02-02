@@ -2,14 +2,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import { message } from 'antd';
+import { Button, message } from 'antd';
 
 import ContactForm from './ContactForm';
 import * as contactMailActions from '../actions';
 import { CONTACT_STRINGS } from '../constants';
 import { getStatus } from '../selectors';
 
-const { PRIMARY, TITLE } = CONTACT_STRINGS;
+const { 
+    BTN_MAIL,
+    CONTACT_US, 
+    DEFAULT, 
+    LARGE, 
+    MAIL,MSG_NOT_SENT, 
+    MSG_SENT,
+} = CONTACT_STRINGS;
 
 class ContactUs extends React.Component {
     state = {
@@ -32,6 +39,7 @@ class ContactUs extends React.Component {
             if (error) {
                 return error;
             }
+            
             form.resetFields();
             
             const payload = {
@@ -40,8 +48,10 @@ class ContactUs extends React.Component {
                 name,
                 subject,
             };
+
             sendContactMail(payload);
             this.setState({ visible: false });
+
         });  
     }
 
@@ -51,16 +61,27 @@ class ContactUs extends React.Component {
 
     notifyMailStatus = () => {
         const { isMailSent } = this.props;
-        if(isMailSent !== undefined){
-            isMailSent ? message.success("message succesfully sent", 5): 
-                message.error("message not sent", 5);
+
+        if(isMailSent !== undefined) {
+            isMailSent ? message.success(MSG_SENT, 5): 
+                message.error(MSG_NOT_SENT, 5);
         }            
     };
 
     render() {      
         return (
             <div>
-                <div type={PRIMARY} onClick={this.showModal}>{TITLE}</div>
+                <div className={CONTACT_US} >
+                    <Button 
+                        className={BTN_MAIL}
+                        icon={MAIL} 
+                        onClick={this.showModal} 
+                        size={LARGE}
+                        type={DEFAULT} 
+                    >
+                        {CONTACT_US}
+                    </Button>
+                </div>
                 <ContactForm
                     wrappedComponentRef={this.saveFormRef}
                     visible={this.state.visible}
