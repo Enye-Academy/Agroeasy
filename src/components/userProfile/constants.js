@@ -80,3 +80,4 @@ export const SIDE_MENU_ITEMS = [
 ];
 
 export const USER_DATA_URL = "http://localhost:4000/account/signin/:id";
+export const NAME = "userprofile";

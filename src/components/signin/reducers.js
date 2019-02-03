@@ -1,6 +1,7 @@
 import { RESET_STATE, SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
 
 const initialState = {
+    data: {},
     email: "",
     error: null,
     isLoading:false,
