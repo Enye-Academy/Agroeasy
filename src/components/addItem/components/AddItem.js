@@ -1,10 +1,23 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { bindActionCreators } from "redux";
+import { connect } from 'react-redux';
 import { List, Avatar, Icon } from 'antd';
+
+import { requestProductList } from '../actions';
+import { getProductList } from '../selectors';
+
 import { LIST_DATA, PRODUCER_PAGE } from '../constants';
 
 const { EDIT, LARGE, LOGO, PRODUCT_ITEM, VERTICAL } = PRODUCER_PAGE;
 
 class AddItem extends React.Component {
+    componentDidMount() {
+        const { requestProductList } = this.props.actions;
+
+        requestProductList();
+    }
+
     render() {
         return (
             <List
@@ -39,4 +52,19 @@ class AddItem extends React.Component {
     }
 }
 
-export default AddItem;
+AddItem.propTypes = {
+    actions: PropTypes.shape({
+        requestProductList: PropTypes.func,
+    }),
+    productList: PropTypes.array,
+};
+
+const mapStateToProps = state => ({
+    productList: getProductList(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators({ requestProductList }, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddItem);

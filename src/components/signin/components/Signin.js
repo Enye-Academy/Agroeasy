@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { message } from 'antd';
 
 import SigninForm from './SigninForm';
