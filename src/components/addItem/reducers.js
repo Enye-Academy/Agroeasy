@@ -1,4 +1,4 @@
-import { REQUEST_PRODUCT_LIST, UPDATE_PRODUCT_DETAILS } from './actionTypes';
+import { REQUEST_PRODUCT_LIST, UPDATE_PRODUCT_DETAILS, UPDATE_PRODUCT_LIST } from './actionTypes';
 import { INITIAL_STATE } from './constants';
 
 export default (state = { ...INITIAL_STATE }, action ) => {
@@ -13,6 +13,14 @@ export default (state = { ...INITIAL_STATE }, action ) => {
             ...state,
             isSending: true,
         };
+    case UPDATE_PRODUCT_LIST: {
+        const { payload: productList } = action;
+
+        return {
+            ...state,
+            productList,
+        };
+    }
     default:
         return state;
     }
