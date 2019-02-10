@@ -3,7 +3,7 @@ import React from 'react';
 import { Form, Input, Modal } from 'antd';
 
 import {
-    DEFAULT_FIRST_FIRST,
+    DEFAULT_FIRST_FIELD,
     EDIT_FORM_TITLE,
     EDITABLE_FIELDS,
     FORM_ITEM_LAYOUT,
@@ -42,7 +42,7 @@ function generateProductEditForm(decorator, productToEdit) {
                 </FormItem>
             );
 
-            field === DEFAULT_FIRST_FIRST ? total.unshift(formItem) : total.push(formItem);
+            field === DEFAULT_FIRST_FIELD ? total.unshift(formItem) : total.push(formItem);
         }
 
         return total;

@@ -8,7 +8,10 @@ export const EDIT_FORM_TITLE = 'Edit Product Details';
 export const SAVE_PRODUCT_DETAILS = 'Save Details';
 
 /**@constant*/
-export const DEFAULT_FIRST_FIRST = 'title';
+export const DEFAULT_FIRST_FIELD = 'title';
+
+/**@constant*/
+export const LIST_ITEM_CLASS = 'list-item-desc';
 
 /**@constant*/
 export const FORM_ITEM_LAYOUT = {

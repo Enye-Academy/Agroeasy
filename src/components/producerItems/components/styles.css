@@ -5,3 +5,7 @@
     margin-top: 70px;
     margin-bottom: 5px;
 }
+
+.list-item-desc {
+    display: block;
+}

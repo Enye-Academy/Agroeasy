@@ -69,9 +69,12 @@ class ProducerItems extends React.Component {
             // to the backend
             setTimeout(() => {
                 requestProductUpdate(newProductDetails);
-                this.setState({ isProductUpdating: false });
+                this.setState({
+                    isProductUpdating: false,
+                    productToEdit: newProductDetails,
+                });
             }, 1500);
-        } 
+        }
     }
 
     componentDidMount() {
