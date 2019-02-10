@@ -10,7 +10,7 @@ import * as signinActions from '../actions';
 import * as  signinSelectors from '../selectors';
 
 const { getData, getStatus } = signinSelectors;
-const { FAIL_MESSAGE, PRIMARY, SUCCESS, SUCCESS_MESSAGE, TITLE } = SIGNIN_STRINGS;
+const { PRIMARY, SUCCESS, SUCCESS_MESSAGE, TITLE } = SIGNIN_STRINGS;
 
 class Signin extends React.Component {
     state = {
@@ -46,11 +46,8 @@ class Signin extends React.Component {
     saveFormRef = formRef => {
         this.formRef = formRef;
     }
-    notifySigninStatus = () => {
 
-    }
-
-    componentDidMount() {
+    componentDidUpdate() {
         const { resetSignState } = this.props.actions;
         const { signinStatus, siginData } = this.props;
 

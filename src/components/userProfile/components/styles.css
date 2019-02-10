@@ -56,8 +56,8 @@
 
 }
 .menu {
-    height: 80vh;
-    margin-top: 50px;
+    height: 100%;
+    padding-top: 50px;
 }
 .sm-content {
     padding: 0 14px;
@@ -82,12 +82,4 @@
 .avatar-card {
     margin: -7%;
     padding-top: 24px;
-}
-
-/* Producer */
-.product-item{
-    font-size: 14px;
-    margin-left: 10px;
-    margin-top: 70px;
-    margin-bottom: 5px;
 }
