@@ -48,7 +48,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.0.5",
     "redux": "^4.0.1",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^0.16.2",
+    "shallow-equal": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

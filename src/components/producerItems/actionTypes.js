@@ -9,6 +9,14 @@ import { NAME } from './constants';
 export const REQUEST_PRODUCT_LIST = `${NAME}/REQUEST_PRODUCT_LIST`;
 
 /**
+ * Fired by the {@link actions.requestProductUpdate requestProductUpdate}
+ * action creator.
+ *
+ * @type {String}
+ */
+export const REQUEST_PRODUCT_UPDATE = `${NAME}/REQUEST_PRODUCT_UPDATE`;
+
+/**
  * Fired by the {@link actions.updateProductDetails updateProductDetails}
  * action creator.
  *
