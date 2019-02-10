@@ -45,7 +45,7 @@ export const updateProductDetails = payload => ({
 });
 
 /**
- * Update a product list in the redux store
+ * Update the product list in the redux store
  *
  * @function
  *

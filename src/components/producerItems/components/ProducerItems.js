@@ -71,9 +71,7 @@ class ProducerItems extends React.Component {
                 requestProductUpdate(newProductDetails);
                 this.setState({ isProductUpdating: false });
             }, 1500);
-        } else {
-            //
-        }
+        } 
     }
 
     componentDidMount() {

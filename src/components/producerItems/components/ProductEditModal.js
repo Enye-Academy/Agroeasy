@@ -56,7 +56,7 @@ class ProductEditForm extends React.Component {
     state = { formItems: [] };
 
     /**
-     * Validates the the form rules have all past then send a request to update
+     * Validates the the form rules have all passed then sends a request to update
      * the product details
      *
      * @function
