@@ -18,6 +18,7 @@ export const LOGO = {
     SOURCE: "/AgroeasyLogo.png",
 };
 
+/** @constant */
 export const NAVBAR = {
     MAIN_NAV: "main-nav",
     MARKET_TEXT: "Market",
@@ -37,6 +38,7 @@ export const PATHS = {
     SIGN_UP: '/signup',
 };
 
+/** @constant */
 export const USER_AVATAR = {
     CONTAINER: "avatar-container",
     ICON_TYPE: "user",
