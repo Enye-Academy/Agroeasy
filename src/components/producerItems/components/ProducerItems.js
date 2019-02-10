@@ -63,8 +63,14 @@ class ProducerItems extends React.Component {
         const hasProductBeenUpdated = !shallowCompare(productToEdit, newProductDetails);
 
         if (hasProductBeenUpdated) {
-            requestProductUpdate(newProductDetails);
-            this.setState({ isProductUpdating: false });
+            this.setState({ isProductUpdating: true });
+
+            // TODO: Remove setTimeout here once this component has been hooked up
+            // to the backend
+            setTimeout(() => {
+                requestProductUpdate(newProductDetails);
+                this.setState({ isProductUpdating: false });
+            }, 1500);
         } else {
             //
         }
@@ -77,7 +83,7 @@ class ProducerItems extends React.Component {
     }
 
     render() {
-        const { isModalOpen, productToEdit } = this.state;
+        const { isModalOpen, isProductUpdating, productToEdit } = this.state;
         const { productList } = this.props;
 
         return (
@@ -89,6 +95,7 @@ class ProducerItems extends React.Component {
                 <ProductEditModal
                     closeModal={this.closeProductModal}
                     isOpen={isModalOpen}
+                    isProductUpdating={isProductUpdating}
                     productToEdit={productToEdit}
                     updateProduct={this.sendProductForUpdate}
                 />

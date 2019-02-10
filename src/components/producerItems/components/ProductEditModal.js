@@ -77,11 +77,12 @@ class ProductEditForm extends React.Component {
     }
 
     render() {
-        const { closeModal, isOpen } = this.props;
+        const { closeModal, isOpen, isProductUpdating } = this.props;
         const { formItems } = this.state;
 
         return (
             <Modal
+                confirmLoading={isProductUpdating}
                 visible={isOpen}
                 title={EDIT_FORM_TITLE}
                 okText={SAVE_PRODUCT_DETAILS}
@@ -103,6 +104,7 @@ ProductEditForm.propTypes = {
     closeModal: PropTypes.func,
     form: PropTypes.object,
     isOpen: PropTypes.bool,
+    isProductUpdating: PropTypes.bool,
     productToEdit: PropTypes.object,
     updateProduct: PropTypes.func,
 };
