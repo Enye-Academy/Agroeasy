@@ -11,6 +11,18 @@ export const SAVE_PRODUCT_DETAILS = 'Save Details';
 export const DEFAULT_FIRST_FIRST = 'title';
 
 /**@constant*/
+export const FORM_ITEM_LAYOUT = {
+    labelCol: {
+        sm: { span: 8 },
+        xs: { span: 24 },
+    },
+    wrapperCol: {
+        sm: { span: 16 },
+        xs: { span: 24 },
+    },
+};
+
+/**@constant*/
 export const EDITABLE_FIELDS = {
     cost: {
         label: 'Cost',

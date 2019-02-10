@@ -6,6 +6,7 @@ import {
     DEFAULT_FIRST_FIRST,
     EDIT_FORM_TITLE,
     EDITABLE_FIELDS,
+    FORM_ITEM_LAYOUT,
     SAVE_PRODUCT_DETAILS
 } from '../constants';
 
@@ -33,6 +34,7 @@ function generateProductEditForm(decorator, productToEdit) {
             const { label, rules } = editableField;
             const formItem = (
                 <FormItem
+                    {...FORM_ITEM_LAYOUT}
                     key={field}
                     label={label}
                 >
