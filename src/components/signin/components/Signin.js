@@ -2,15 +2,12 @@ import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { message } from 'antd';
 
 import SigninForm from './SigninForm';
 import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
-import * as  signinSelectors from '../selectors';
 
-const { getData, getStatus } = signinSelectors;
-const { FAIL_MESSAGE, PRIMARY, SUCCESS, SUCCESS_MESSAGE, TITLE } = SIGNIN_STRINGS;
+const {  PRIMARY,TITLE } = SIGNIN_STRINGS;
 
 class Signin extends React.Component {
     state = {
@@ -47,18 +44,6 @@ class Signin extends React.Component {
         this.formRef = formRef;
     }
 
-    componentDidUpdate() {
-        const { resetSignState } = this.props.actions;
-        const { signinStatus, siginData } = this.props;
-
-        if(signinStatus !== undefined){
-            signinStatus === SUCCESS ?
-                message.success(`${siginData.user.firstName}  ${SUCCESS_MESSAGE}`, 5):
-                message.error(siginData.title, 5);
-        }
-        resetSignState();
-    }
-
     render() {
         return (
             <div>
@@ -76,12 +61,10 @@ class Signin extends React.Component {
 
 Signin.propTypes = {
     actions: PropTypes.object,
-    siginData: PropTypes.object,
-    signinStatus: PropTypes.string,
+    siginLoading: PropTypes.bool,
 };
 const mapStateToProps = state => ({
-    siginData: getData(state),
-    signinStatus: getStatus(state),
+    siginLoading: state.signin.isLoading,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -2,10 +2,7 @@
 export const NAME = 'signin';
 
 export const SIGNIN_STRINGS = {
-    FAIL_MESSAGE: "Unsuccessful sigin, check your username or password",
     PRIMARY: "primary",
-    SUCCESS: "success",
-    SUCCESS_MESSAGE: "You have  successfully sigined in",
     TITLE: "Sign in",
 };
 
