@@ -6,7 +6,7 @@ import {
 } from './actionTypes';
 
 /**
- * Triggers request to update product item details in the database
+ * Triggers request to retrieve product list from the database
  *
  * @function
  * @return {Object} The {@link actionTypes.REQUEST_PRODUCT_LIST REQUEST_PRODUCT_LIST}
