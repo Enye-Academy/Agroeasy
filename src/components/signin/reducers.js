@@ -1,7 +1,8 @@
-import { SIGNIN_REQUEST } from './actionTypes';
+import { RESET_STATE, SIGNIN_REQUEST } from './actionTypes';
 
 const initialState = {
     email: "",
+    isLoading: false,
     password: "",
 };
 
@@ -13,9 +14,13 @@ export default ( state = { ...initialState }, action) => {
         return {
             ...state,
             email,
+            isLoading: true,
             password,
         };
     }
+
+    case RESET_STATE:
+        return { ...initialState };
 
     default:
         return state;

@@ -25,6 +25,7 @@ class Signin extends React.Component {
     handleCreate = () => {
         const form = this.formRef.props.form;
         const { signinRequest } = this.props.actions;
+
         form.validateFields((error, { email, password }) => {
             if (error) {
                 return error;
@@ -35,9 +36,7 @@ class Signin extends React.Component {
                 password,
             };
             signinRequest(payload);
-            this.setState({ visible: false });
         });
-
     }
 
     saveFormRef = formRef => {
@@ -45,6 +44,7 @@ class Signin extends React.Component {
     }
 
     render() {
+        const { siginLoading } = this.props
         return (
             <div>
                 <div type={PRIMARY} onClick={this.showModal}>{TITLE}</div>
@@ -53,6 +53,7 @@ class Signin extends React.Component {
                     visible={this.state.visible}
                     onCancel={this.handleCancel}
                     onCreate={this.handleCreate}
+                    isLoading={siginLoading}
                 />
             </div>
         );
