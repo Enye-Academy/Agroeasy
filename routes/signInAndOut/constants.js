@@ -18,5 +18,5 @@ export default {
         'updatedAt',
         'username',
     ],
-    USER_NOT_FOUND: 'Cannnot find any user with the email or password',
+    USER_NOT_FOUND: 'User does not exist or may have been deleted',
 };
