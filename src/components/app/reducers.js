@@ -1,7 +1,8 @@
-import { RESET_STATE,SIGNIN_SUCCESS } from './actionTypes';
+import { RESET_STATE,SIGNIN_SUCCESS,SIGNUP_SUCCESS } from './actionTypes';
 
 const initialState = {
-    status: null,
+    siginStatus: null,
+    signupStatus: null,
 };
 
 export default ( state = { ...initialState }, action) => {
@@ -12,8 +13,17 @@ export default ( state = { ...initialState }, action) => {
         const { payload: { data, status } } = action;
         return {
             ...state,
-            data,
-            status,
+            siginStatus: status,
+            signinData: data,
+        };
+    }
+
+    case SIGNUP_SUCCESS:{
+        const { data: signupData, status: signupStatus } = action.payload;
+        return {
+            ...state,
+            signupData,
+            signupStatus,
         };
     }
 

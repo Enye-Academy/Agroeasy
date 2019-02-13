@@ -7,7 +7,7 @@ import { NAME } from './constants';
  * @return {Boolean} the state of the signup
  * {@link module:signup/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getStatus = state =>  state[NAME].isSignupSuccessful;
+export const getStatus = state =>  state[NAME].status;
 
 /**
  * Selects the <tt>message</tt> key.
@@ -17,4 +17,4 @@ export const getStatus = state =>  state[NAME].isSignupSuccessful;
  * @return {Object} the state of the signup
  * {@link module:signup/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getMessage = state => state[NAME].message;
+export const getMessage = state => state[NAME].data;

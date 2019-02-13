@@ -1,4 +1,4 @@
-import { RESET_STATE, SIGNIN_SUCCESS } from './actionTypes';
+import { RESET_STATE, SIGNIN_SUCCESS, SIGNUP_SUCCESS } from './actionTypes';
 
 /**
  * Triggers request to update redux store on success
@@ -11,6 +11,19 @@ import { RESET_STATE, SIGNIN_SUCCESS } from './actionTypes';
 export const signinSuccess = payload => ({
     payload,
     type: SIGNIN_SUCCESS,
+});
+
+/**
+ * Triggers request to update redux store on success
+ *
+ * @function
+ * @param {Object} payload An object containing signup status (success or failure) provided 
+ * the endpoint is reachable
+ * @return {Object} The {@link actionTypes.SIGNUP_SUCCESS SIGNUP_SUCCESS} action.
+ */
+export const signupSuccess = payload => ({
+    payload,
+    type: SIGNUP_SUCCESS,
 });
 
 /**

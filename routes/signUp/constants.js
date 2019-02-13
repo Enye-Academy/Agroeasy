@@ -1,5 +1,5 @@
 export default {
-    FAIL: 'success',
+    FAIL: 'fail',
     NO_EMAIL_PASSWORD: 'Error: Email or Password cannot be blank.',
     SIGNED_UP: 'Signed up successfully',
     SIGN_UP_KEYS: [
