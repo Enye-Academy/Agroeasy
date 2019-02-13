@@ -5,7 +5,7 @@ import CONSTANTS from './constants';
 import models from '../../db/models/';
 
 const { Producer, User } = models;
-const { NO_EMAIL_PASSWORD, SIGN_UP_KEYS, USER_EXIST, SIGNED_UP  } = CONSTANTS;
+const { FAIL, NO_EMAIL_PASSWORD, SIGN_UP_KEYS, USER_EXIST, SIGNED_UP, SUCCESS  } = CONSTANTS;
 
 export default {
     signUpUser: async (req, res) => {
@@ -14,20 +14,23 @@ export default {
         const { email, password, typeOfProducts } = req.body;
 
         if(!email || !password){
-            return res.send({ message: NO_EMAIL_PASSWORD, success: false });
+            return res.send({ 
+                data: { title: NO_EMAIL_PASSWORD }, 
+                status: FAIL,
+            });
         }
 
         try{
             const previousUsers = await User.findOne({ email });
 
             if (previousUsers) {
-                return res.send({
-                    message: USER_EXIST,
-                    success: false,
+                return res.status(200).json({
+                    data:{ title: USER_EXIST },
+                    status: FAIL,
                 });
             }
         } catch(err){
-            res.send({ err });
+            res.status(500).json({ err });
         }
 
         try {
@@ -38,8 +41,6 @@ export default {
             });
             await user.save();
 
-            // TODO: Check that the type of product is valid before creating the
-            // producer
             if(typeOfProducts) {
                 const producer = Object.assign(new Producer(), {
                     typeOfProducts,
@@ -49,12 +50,13 @@ export default {
                 await producer.save();
             }
 
-            return res.send({
-                message: SIGNED_UP,
-                success: true,
+            return res.status(200).json({
+                data: { title: SIGNED_UP },
+                status: SUCCESS,
             });
+
         } catch(error) {
-            res.send({ error, success: false });
+            res.status(500).json({ error, success: false });
         }
     },
     //This does not log the user in, but does create an account via API.
