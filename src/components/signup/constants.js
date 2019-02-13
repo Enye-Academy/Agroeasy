@@ -78,7 +78,7 @@ export const INPUTS = [
     {
         field: "phoneNumber",
         label: "Mobile Number",
-        rules: [{ message: "Please input your Country!", required: true }],
+        rules: [{ message: "Please input your Mobile Number!", required: true }],
     },
     {
         field: 'password',
