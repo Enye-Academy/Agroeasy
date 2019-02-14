@@ -10,8 +10,10 @@ export const INPUTS = [
     {
         field: 'email',
         iconType: "user",
-        placeholder: "Enter your username",
-        rules: [{ message: "You have to input your username", required: true }],
+        placeholder: "Enter your E-mail",
+        rules: [{ message: "Please input your E-mail!", required: true },{
+            message: 'The input is not valid E-mail!', type: 'email',
+        }],
     },
     {
         field: 'password',

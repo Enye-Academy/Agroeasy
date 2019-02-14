@@ -57,10 +57,10 @@ const SigninForm = Form.create()(SigninModal);
 
 SigninModal.propTypes = {
     form: PropTypes.object,
+    isLoading: PropTypes.bool,
     onCancel: PropTypes.func,
     onCreate: PropTypes.func,
     visible: PropTypes.bool,
-    isLoading: PropTypes.bool,
 };
 
 export default SigninForm;
