@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import SigninForm from './SigninForm';
 import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
+import { getIsLoading } from '../selectors';
 
 const {  PRIMARY,TITLE } = SIGNIN_STRINGS;
 
@@ -44,7 +45,8 @@ class Signin extends React.Component {
     }
 
     render() {
-        const { siginLoading } = this.props
+        const { siginLoading } = this.props;
+
         return (
             <div>
                 <div type={PRIMARY} onClick={this.showModal}>{TITLE}</div>
@@ -65,7 +67,7 @@ Signin.propTypes = {
     siginLoading: PropTypes.bool,
 };
 const mapStateToProps = state => ({
-    siginLoading: state.signin.isLoading,
+    siginLoading: getIsLoading(state),
 });
 
 const mapDispatchToProps = dispatch => ({
