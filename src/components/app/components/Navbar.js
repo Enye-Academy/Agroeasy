@@ -5,7 +5,8 @@ import { bindActionCreators } from "redux";
 import { Avatar, Dropdown, Layout, Menu } from 'antd';
 
 import AppLink from './AppLink';
-import { removeCookie } from '../actions';
+import { getLoginStatus } from '../selectors';
+import { removeCookie, resetSigninState } from '../actions';
 
 import signin from '../../signin';
 import signup from '../../signup';
@@ -35,9 +36,12 @@ const items = [
  * this is the the navigation bar at the top of the home page
 */
 class Navbar extends React.Component {
+
     logout = ({ key }) => {
-        const { removeCookie } = this.props.actions;
-        key === SIGN_OUT && removeCookie();
+        const { removeCookie, resetSigninState } = this.props.actions;
+        const { isLoggedIn } = this.props;
+
+        if(isLoggedIn) key === SIGN_OUT ? removeCookie() && resetSigninState() : "";
     }
 
     render() {       
@@ -79,11 +83,16 @@ class Navbar extends React.Component {
 
 Navbar.propTypes = {
     actions: PropTypes.object,
+    isLoggedIn:PropTypes.bool,
     links: PropTypes.arrayOf(PropTypes.node),
 };
 
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators({ removeCookie }, dispatch),
+const mapStateToProps = state => ({
+    isLoggedIn: getLoginStatus(state),
 });
 
-export default connect(null, mapDispatchToProps)(Navbar);
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators({ removeCookie, resetSigninState }, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
