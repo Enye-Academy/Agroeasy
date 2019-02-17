@@ -1,7 +1,7 @@
 import { effects } from 'redux-saga';
 import {  SIGNUP_REQUEST } from './actionTypes';
 import { SIGNUP_URL } from './constants';
-import { signupSuccess } from './actions';
+import { signupSuccess } from '../app/actions';
 
 /**
  * Makes a request to sign up a user

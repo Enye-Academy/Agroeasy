@@ -1,4 +1,4 @@
-import {  SIGNUP_SUCCESS, SIGNUP_REQUEST } from './actionTypes';
+import { SIGNUP_REQUEST } from './actionTypes';
 
 const initialState = {
     data: [],
@@ -15,18 +15,6 @@ export default (state = initialState, action) => {
             isLoading: true,
             registered: false,
         };
-
-    case SIGNUP_SUCCESS:{
-        const { message, success: isSignupSuccessful } = action.payload;
-        return {
-            ...state,
-            data: action.payload,
-            isLoading: false,
-            isSignupSuccessful,
-            message,
-            registered: true,
-        };
-    }
 
     default:
         return state;
