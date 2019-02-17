@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { Avatar, Dropdown, Layout, Menu } from 'antd';
+import { Avatar, Dropdown, Layout, Menu, message } from 'antd';
 
 import AppLink from './AppLink';
 import { getLoginStatus } from '../selectors';
@@ -11,7 +11,7 @@ import { removeCookie, resetSigninState } from '../actions';
 import signin from '../../signin';
 import signup from '../../signup';
 
-import { LOGO, MARKET_TEXT, NAVBAR, PATHS, USER_AVATAR } from '../constants';
+import { LOGO, MARKET_TEXT, NAVBAR, PATHS, USER_AVATAR, VALID_SIGNOUT } from '../constants';
 
 const { Item } = Menu;
 const { Header } = Layout;
@@ -41,7 +41,8 @@ class Navbar extends React.Component {
         const { removeCookie, resetSigninState } = this.props.actions;
         const { isLoggedIn } = this.props;
 
-        if(isLoggedIn) key === SIGN_OUT ? removeCookie() && resetSigninState() : "";
+        if(isLoggedIn) key === SIGN_OUT ? removeCookie() && 
+            message.info(VALID_SIGNOUT, 5) && resetSigninState() : "";
     }
 
     render() {       

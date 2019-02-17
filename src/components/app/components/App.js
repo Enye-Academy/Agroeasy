@@ -17,13 +17,7 @@ class App extends React.Component {
     componentDidUpdate() {
         const { isLoggedIn, user } = this.props;        
 
-        if (isLoggedIn) {
-            message.success(`${user.firstName} ${SIGNIN_SUCCESS}`, 5);
-            
-        }
-        else if(isLoggedIn === false) {
-            message.info(VALID_SIGNOUT, 5);
-        }
+        if (isLoggedIn) message.success(`${user.firstName} ${SIGNIN_SUCCESS}`, 5);
     }
 
     render() {
