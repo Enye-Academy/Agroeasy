@@ -1,7 +1,7 @@
 import { effects } from 'redux-saga';
 import {  SIGNUP_REQUEST } from './actionTypes';
 import { SIGNUP_URL } from './constants';
-import { signupSuccess, signupFailure } from './actions';
+import { signupSuccess } from './actions';
 
 /**
  * Makes a request to sign up a user
@@ -26,7 +26,8 @@ function* signupUser(action) {
             yield effects.put(signupSuccess(data));
         }
     } catch (error) {
-        yield effects.put(signupFailure(error));
+        // eslint-disable-next-line no-console
+        console.log(error);
     } 
 }
 

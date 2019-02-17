@@ -1,4 +1,4 @@
-import { SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from './actionTypes';
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS } from './actionTypes';
 
 /**
  * Triggers request to sign up the user
@@ -23,15 +23,4 @@ export const signupRequest = payload => ({
 export const signupSuccess = payload => ({
     payload,
     type: SIGNUP_SUCCESS,
-});
-
-/**
- * Triggers request to update redux store on failure
- * @function
- * @param {Object} error An object containing error info if the signup endpoint is unreachable
- * @return {Object} The {@link actionTypes.SIGNUP_FAILURE SIGNUP_FAILURE} action.
- */
-export const signupFailure = error => ({
-    error,
-    type: SIGNUP_FAILURE,
 });

@@ -1,4 +1,4 @@
-import { RESET_STATE, SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
+import { RESET_STATE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
 
 /**
  * Triggers request to sign in a user
@@ -23,18 +23,6 @@ export const signinRequest = payload => ({
 export const signinSuccess = payload => ({
     payload,
     type: SIGNIN_SUCCESS,
-});
-
-/**
- * Triggers request to update redux store on failure
- *
- * @function
- * @param {Object} error An object containing error info if the signin endpoint is unreachable
- * @return {Object} The {@link actionTypes.SIGNIN_FAILURE SIGNIN_FAILURE} action.
- */
-export const signinFailure = error => ({
-    error,
-    type: SIGNIN_FAILURE,
 });
 
 /**
