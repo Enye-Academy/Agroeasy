@@ -39,8 +39,7 @@ class Signin extends React.Component {
             };
             signinRequest(payload);
             this.setState({ visible: false });
-        });
-        
+        }); 
     }
 
     saveFormRef = formRef => {
