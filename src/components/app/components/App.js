@@ -6,7 +6,7 @@ import { Layout, message } from 'antd';
 import contactus from '../../contactUs';
 import Footer from './Footer';
 import Navbar from './Navbar';
-import { getLoginStatus, getUserData, getMessage, getStatus } from '../selectors';
+import { getLoginStatus, getUserData, getSignUpMessage, getSignUpStatus } from '../selectors';
 import { SIGNIN_SUCCESS } from '../constants';
 
 const { ContactUs } = contactus.components;
@@ -15,12 +15,14 @@ const { Content } = Layout;
 class App extends React.Component {
 
     componentDidUpdate() {
-        const { isLoggedIn, user, signupMessage, signupStatus } = this.props;        
+        const { isLoggedIn, user, signupMessage, signupStatus } = this.props;    
 
-        if (isLoggedIn) message.success(`${user.firstName} ${SIGNIN_SUCCESS}`, 5);
+        if (isLoggedIn) {
+            message.success(`${user.firstName} ${SIGNIN_SUCCESS}`, 3);
+        }
 
-        signupStatus ==="success" ? message.success(signupMessage.title, 5) : "";
-        signupStatus ==="fail" ? message.error(signupMessage.title, 5): "";
+        signupStatus ==="success" && message.success(signupMessage.title, 3);
+        signupStatus ==="fail" && message.error(signupMessage.title, 3);
     }
 
     render() {
@@ -53,8 +55,8 @@ App.propTypes = {
 
 const mapStateToProps = state => ({
     isLoggedIn: getLoginStatus(state),
-    signupMessage: getMessage(state),
-    signupStatus: getStatus(state),
+    signupMessage: getSignUpMessage(state),
+    signupStatus: getSignUpStatus(state),
     user: getUserData(state),
 });
 

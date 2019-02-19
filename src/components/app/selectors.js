@@ -27,7 +27,7 @@ export const getUserData = state => state[NAME].user;
  * @return {Boolean} the state of the signup
  * {@link module:signup/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getStatus = state =>  state[NAME].status;
+export const getSignUpStatus = state =>  state[NAME].status;
 
 /**
  * Selects the <tt>message</tt> key.
@@ -37,4 +37,4 @@ export const getStatus = state =>  state[NAME].status;
  * @return {Object} the state of the signup
  * {@link module:signup/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getMessage = state => state[NAME].data;
+export const getSignUpMessage = state => state[NAME].data;

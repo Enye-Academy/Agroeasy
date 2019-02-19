@@ -18,9 +18,11 @@ export const signinRequest = payload => ({
  * @function
  * @param {Object} payload An object containing signin status and data 
  * returned from siginn endpoint
+ * @param {boolean} isSuccessful returns true if isSuccessful else false.
  * @return {Object} The {@link actionTypes.SIGNIN_SUCCESS SIGNIN_SUCCESS} action.
  */
-export const signinSuccess = payload => ({
+export const signinSuccess = (isSuccessful, payload) => ({
+    isSuccessful,
     payload,
     type: SIGNIN_SUCCESS,
 });

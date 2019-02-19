@@ -1,14 +1,14 @@
 import { NAME } from './constants';
 
 /**
- * Selects the <tt>isSigninSuccessful</tt> key.
+ * Selects the <tt>isLoading</tt> key.
  *
  * @function
  * @param {Object} state - redux store state
  * @return {Boolean} the state status of the signin
  * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getStatus = state => state[NAME].status;
+export const getIsLoading = state => state[NAME].isLoading;
 
 /**
  * Selects the <tt>message</tt> key.
@@ -18,4 +18,14 @@ export const getStatus = state => state[NAME].status;
  * @return {Object} the state data of the signin which contains user and token
  * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getData = state => state[NAME].data;
+export const getSigninfailureMessage = state => state[NAME].failureMessage;
+
+/**
+ * Selects the <tt>status</tt> key.
+ *
+ * @function
+ * @param {Object} state - redux store state
+ * @return {string} the state status of the signin
+ * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
+ */
+export const getSigninStatus = state => state[NAME].status;

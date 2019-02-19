@@ -21,10 +21,15 @@ function* signinUser(action){
             },
             method: 'POST',
         });
-        if(response.ok){
+
+        if (response.ok) {
             const data = yield response.json();
-            yield effects.put(signinSuccess(data));
+            yield effects.put(signinSuccess(true));
             yield effects.put(setCookie(data));
+
+        } else {
+            const data = yield response.json();
+            yield effects.put(signinSuccess(false, data));
         }
     } catch(error){
         // eslint-disable-next-line no-console

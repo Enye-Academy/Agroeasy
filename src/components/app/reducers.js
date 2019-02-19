@@ -43,9 +43,10 @@ export default ( state = { ...initialState }, action) => {
             user: {},
         };
     }
+    
     case RESET_STATE:
-
         return { ...initialState };
+
     default:
         return state;
     }
