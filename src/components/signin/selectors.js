@@ -15,10 +15,10 @@ export const getIsLoading = state => state[NAME].isLoading;
  *
  * @function
  * @param {Object} state - redux store state
- * @return {Object} the state data of the signin which contains user and token
+ * @return {Object} the state message of signin if failed
  * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getSigninfailureMessage = state => state[NAME].failureMessage;
+export const getSigninfailureMessage = state => state[NAME].message;
 
 /**
  * Selects the <tt>status</tt> key.

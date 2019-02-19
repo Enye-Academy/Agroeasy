@@ -47,7 +47,7 @@ class Signin extends React.Component {
         const { 
             isSuccessful, 
             actions: { resetSignState }, 
-            signinfailureMessage, 
+            signinfailMessage, 
             signinStatus,
         } = this.props;
         const { visible } = this.state;
@@ -56,11 +56,10 @@ class Signin extends React.Component {
             this.setState({ visible: false });
             resetSignState();
         }
-        if( signinStatus === "fail"){
-            message.error(signinfailureMessage,3);
+        if ( signinStatus ) {
+            message.error(signinfailMessage,3);
             resetSignState();
         }
-        
     }
 
     render() {
@@ -86,14 +85,14 @@ Signin.propTypes = {
     isSuccessful:PropTypes.bool,
     siginData: PropTypes.object,
     signinStatus: PropTypes.string,
-    signinfailureMessage: PropTypes.string,
+    signinfailMessage: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
     isLoading: getIsLoading(state),
     isSuccessful: state.signin.isSuccessful,
     signinStatus: getSigninStatus(state),
-    signinfailureMessage: getSigninfailureMessage(state),
+    signinfailMessage: getSigninfailureMessage(state),
 });
 
 const mapDispatchToProps = dispatch => ({

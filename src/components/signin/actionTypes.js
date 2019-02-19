@@ -15,6 +15,14 @@ export const SIGNIN_REQUEST = "SIGN_REQUEST";
 export const SIGNIN_SUCCESS = "SIGNIN_SUCCESS";
 
 /**
+ * Fired by the {@link actions.signinFail signinFail}
+ * action creator.
+ *
+ * @type {String}
+ */
+export const SIGNIN_FAIL = "SIGNIN_FAIL";
+
+/**
  * Fired by the {@link actions.resetState resetState}
  * action creator.
  *

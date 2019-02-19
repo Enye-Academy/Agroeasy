@@ -16,6 +16,21 @@ export default {
         'updatedAt',
         'username',
     ],
-    SUCCESS:"success",
+    
+    SUCCESS: "success",
+    USERINFO: [
+        '_id',
+        'address',
+        'city',
+        'country',
+        'createdAt',
+        'email',
+        'firstName',
+        'lastName',
+        'phoneNumber',
+        'state',
+        'updatedAt',
+        'username',
+    ],
     USER_EXIST: 'Error: Account already exist.',
 };

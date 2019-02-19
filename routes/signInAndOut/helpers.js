@@ -1,6 +1,12 @@
 import bcrypt from 'bcrypt-nodejs';
 import _pick from 'lodash.pick';
-import { NOT_FOUND, INTERNAL_SERVER_ERROR, OK, getStatusText, UNAUTHORIZED } from 'http-status-codes';
+import { 
+    NOT_FOUND, 
+    INTERNAL_SERVER_ERROR, 
+    OK, 
+    getStatusText, 
+    UNAUTHORIZED 
+} from 'http-status-codes';
 
 import CONSTANTS from './constants';
 import models from '../../db/models/';

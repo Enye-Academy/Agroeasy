@@ -1,4 +1,4 @@
-import { RESET_STATE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
+import { RESET_STATE, SIGNIN_FAIL, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
 
 /**
  * Triggers request to sign in a user
@@ -16,15 +16,25 @@ export const signinRequest = payload => ({
  * Triggers request to update redux store on success
  *
  * @function
- * @param {Object} payload An object containing signin status and data 
- * returned from siginn endpoint
  * @param {boolean} isSuccessful returns true if isSuccessful else false.
  * @return {Object} The {@link actionTypes.SIGNIN_SUCCESS SIGNIN_SUCCESS} action.
  */
-export const signinSuccess = (isSuccessful, payload) => ({
+export const signinSuccess = isSuccessful => ({
     isSuccessful,
-    payload,
     type: SIGNIN_SUCCESS,
+});
+
+/**
+ * Triggers request to update redux store on success
+ *
+ * @function
+ * @param {Object} payload An object containing signin status and data 
+ * returned from siginn endpoint
+ * @return {Object} The {@link actionTypes.SIGNIN_FAIL SIGNIN_FAIL} action.
+ */
+export const signinFail = payload => ({
+    payload,
+    type: SIGNIN_FAIL,
 });
 
 /**

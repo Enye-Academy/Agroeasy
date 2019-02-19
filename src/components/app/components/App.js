@@ -7,7 +7,7 @@ import contactus from '../../contactUs';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import { getLoginStatus, getUserData, getSignUpMessage, getSignUpStatus } from '../selectors';
-import { SIGNIN_SUCCESS } from '../constants';
+import { FAIL, SIGNIN_SUCCESS, SUCCESS } from '../constants';
 
 const { ContactUs } = contactus.components;
 const { Content } = Layout;
@@ -21,8 +21,8 @@ class App extends React.Component {
             message.success(`${user.firstName} ${SIGNIN_SUCCESS}`, 3);
         }
 
-        signupStatus ==="success" && message.success(signupMessage.title, 3);
-        signupStatus ==="fail" && message.error(signupMessage.title, 3);
+        signupStatus === SUCCESS && message.success(signupMessage, 3);
+        signupStatus === FAIL && message.error(signupMessage, 3);
     }
 
     render() {
@@ -48,7 +48,7 @@ App.propTypes = {
     isLoggedIn: PropTypes.bool, 
     links: PropTypes.arrayOf(PropTypes.node),
     match: PropTypes.object,
-    signupMessage: PropTypes.object,
+    signupMessage: PropTypes.string,
     signupStatus: PropTypes.string,
     user: PropTypes.object,
 };

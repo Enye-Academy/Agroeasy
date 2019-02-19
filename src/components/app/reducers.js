@@ -25,11 +25,15 @@ export default ( state = { ...initialState }, action) => {
     }
 
     case SIGNUP_SUCCESS:{
-        const { status, data } = action.payload;
+        const { status, data: { title, user, token } } = action.payload;
+        status ==="success" && Cookies.set(token, { expires: EXPIRATION });
+        
         return {
             ...state,
-            data,
+            message: title,
             status,
+            token,
+            user,
         };
     }
 
@@ -43,7 +47,7 @@ export default ( state = { ...initialState }, action) => {
             user: {},
         };
     }
-    
+
     case RESET_STATE:
         return { ...initialState };
 

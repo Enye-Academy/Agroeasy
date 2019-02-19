@@ -2,7 +2,7 @@ import { effects } from 'redux-saga';
 import { setCookie } from '../app/actions';
 import {  SIGNIN_REQUEST } from './actionTypes';
 import { SIGNIN_URL } from './constants';
-import { signinSuccess } from './actions';
+import { signinSuccess, signinFail } from './actions';
 
 /**
  * Makes a request to sign in a user
@@ -29,7 +29,7 @@ function* signinUser(action){
 
         } else {
             const data = yield response.json();
-            yield effects.put(signinSuccess(false, data));
+            yield effects.put(signinFail(data));
         }
     } catch(error){
         // eslint-disable-next-line no-console
