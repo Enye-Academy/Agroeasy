@@ -1,10 +1,6 @@
 import _pick from 'lodash.pick';
 import bcrypt from 'bcrypt-nodejs';
-import { 
-    INTERNAL_SERVER_ERROR, 
-    OK, getStatusText, 
-    UNAUTHORIZED 
-} from 'http-status-codes';
+import { INTERNAL_SERVER_ERROR, OK, getStatusText } from 'http-status-codes';
 
 import CONSTANTS from './constants';
 import models from '../../db/models/';
@@ -37,7 +33,7 @@ export default {
             const previousUsers = await User.findOne({ email });
 
             if (previousUsers) {
-                return res.status(UNAUTHORIZED).json({
+                return res.json({
                     data:{ title: USER_EXIST },
                     status: FAIL,
                 });
