@@ -31,11 +31,11 @@ export default ( state = { ...initialState }, action) => {
     }
 
     case SIGNIN_FAIL: {
-
         const { status, data: { title } } = action.payload;
 
         return{
             ...state,
+            isLoading: false,
             message: title,
             status,
         };

@@ -78,7 +78,4 @@ export const VALID_SIGNOUT = "You have been signed out";
 
 export const SIGNIN_SUCCESS = "You have succesfully signed in";
 
-export const SUCCESS = "success";
-export const FAIL ="fail";
-
 export const EXPIRATION = 86400000;

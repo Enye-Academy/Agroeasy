@@ -2,12 +2,18 @@ import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { message } from 'antd';
 
 import SigninForm from './SigninForm';
 import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
-import { getIsLoading, getSigninfailureMessage, getSigninStatus } from '../selectors';
-import { message } from 'antd';
+import { 
+    getIsLoading, 
+    getSigninfailureMessage, 
+    getSigninStatus, 
+    getisSuccessful 
+} from '../selectors';
+
 const { PRIMARY, TITLE } = SIGNIN_STRINGS;
 
 class Signin extends React.Component {
@@ -48,7 +54,7 @@ class Signin extends React.Component {
             isSuccessful, 
             actions: { resetSignState }, 
             signinfailMessage, 
-            signinStatus,
+            signinError,
         } = this.props;
         const { visible } = this.state;
     
@@ -56,7 +62,7 @@ class Signin extends React.Component {
             this.setState({ visible: false });
             resetSignState();
         }
-        if ( signinStatus ) {
+        if (signinError) {
             message.error(signinfailMessage,3);
             resetSignState();
         }
@@ -84,14 +90,14 @@ Signin.propTypes = {
     isLoading: PropTypes.bool,
     isSuccessful:PropTypes.bool,
     siginData: PropTypes.object,
-    signinStatus: PropTypes.string,
+    signinError: PropTypes.string,
     signinfailMessage: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
     isLoading: getIsLoading(state),
-    isSuccessful: state.signin.isSuccessful,
-    signinStatus: getSigninStatus(state),
+    isSuccessful: getisSuccessful(state),
+    signinError: getSigninStatus(state),
     signinfailMessage: getSigninfailureMessage(state),
 });
 

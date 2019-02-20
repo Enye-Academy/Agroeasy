@@ -1,6 +1,6 @@
 import Cookies from 'cookies-js';
 
-import { SET_COOKIE, REMOVE_COOKIE, SIGNUP_SUCCESS, RESET_STATE } from './actionTypes';
+import { SET_COOKIE, REMOVE_COOKIE, RESET_STATE } from './actionTypes';
 import { EXPIRATION } from './constants';
 
 const initialState = {
@@ -19,19 +19,6 @@ export default ( state = { ...initialState }, action) => {
         return {
             ...state,
             isLoggedIn: true,
-            token,
-            user,
-        };
-    }
-
-    case SIGNUP_SUCCESS:{
-        const { status, data: { title, user, token } } = action.payload;
-        status ==="success" && Cookies.set(token, { expires: EXPIRATION });
-        
-        return {
-            ...state,
-            message: title,
-            status,
             token,
             user,
         };

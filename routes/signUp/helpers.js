@@ -1,6 +1,6 @@
 import _pick from 'lodash.pick';
 import bcrypt from 'bcrypt-nodejs';
-import { INTERNAL_SERVER_ERROR, OK, getStatusText } from 'http-status-codes';
+import { INTERNAL_SERVER_ERROR, OK, getStatusText, UNAUTHORIZED} from 'http-status-codes';
 
 import CONSTANTS from './constants';
 import models from '../../db/models/';
@@ -23,7 +23,7 @@ export default {
         const { email, password, typeOfProducts } = req.body;
 
         if(!email || !password){
-            return res.send({ 
+            return res.status(UNAUTHORIZED).send({ 
                 data: { title: NO_EMAIL_PASSWORD }, 
                 status: FAIL,
             });
@@ -33,7 +33,7 @@ export default {
             const previousUsers = await User.findOne({ email });
 
             if (previousUsers) {
-                return res.json({
+                return res.status(UNAUTHORIZED).json({
                     data:{ title: USER_EXIST },
                     status: FAIL,
                 });
@@ -76,7 +76,7 @@ export default {
         } catch(error) {
             return res
                 .status(INTERNAL_SERVER_ERROR)
-                .json({ error:getStatusText(INTERNAL_SERVER_ERROR), success: false });
+                .json({ error: getStatusText(INTERNAL_SERVER_ERROR), success: false });
         }
     },
     //This does not log the user in, but does create an account via API.

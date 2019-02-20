@@ -1,4 +1,4 @@
-import { SET_COOKIE, REMOVE_COOKIE, SIGNUP_SUCCESS, RESET_STATE } from './actionTypes';
+import { SET_COOKIE, REMOVE_COOKIE, RESET_STATE } from './actionTypes';
 
 /**
  * Triggers request to set cookie
@@ -20,19 +20,6 @@ export const setCookie = payload => ({
  */
 export const removeCookie = () => ({
     type: REMOVE_COOKIE,
-});
-
-/**
- * Triggers request to update redux store on success
- *
- * @function
- * @param {Object} payload An object containing signup status (success or failure) provided 
- * the endpoint is reachable
- * @return {Object} The {@link actionTypes.SIGNUP_SUCCESS SIGNUP_SUCCESS} action.
- */
-export const signupSuccess = payload => ({
-    payload,
-    type: SIGNUP_SUCCESS,
 });
 
 /**

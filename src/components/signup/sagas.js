@@ -1,7 +1,8 @@
 import { effects } from 'redux-saga';
 import {  SIGNUP_REQUEST } from './actionTypes';
 import { SIGNUP_URL } from './constants';
-import { signupSuccess } from '../app/actions';
+import {  setCookie } from '../app/actions';
+import { signupFail, signupSuccess } from './actions';
 
 /**
  * Makes a request to sign up a user
@@ -23,7 +24,11 @@ function* signupUser(action) {
 
         if(response.ok){
             const data = yield response.json();
-            yield effects.put(signupSuccess(data));
+            yield effects.put(signupSuccess(true));
+            yield effects.put(setCookie(data));
+        } else { 
+            const data = yield response.json();
+            yield effects.put(signupFail(data));
         }
     } catch (error) {
         // eslint-disable-next-line no-console

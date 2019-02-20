@@ -29,3 +29,13 @@ export const getSigninfailureMessage = state => state[NAME].message;
  * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
 export const getSigninStatus = state => state[NAME].status;
+
+/**
+ * Selects the <tt>isSuccessful</tt> key.
+ *
+ * @function
+ * @param {Object} state - redux store state
+ * @return {boolean} the success(true) state of signin
+ * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
+ */
+export const getisSuccessful = state => state[NAME].isSuccessful;
