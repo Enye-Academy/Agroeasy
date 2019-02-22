@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Layout, message } from 'antd';
+import { withRouter } from 'react-router-dom';
 
 import contactus from '../../contactUs';
 import Footer from './Footer';
@@ -53,4 +54,4 @@ const mapStateToProps = state => ({
     user: getUserData(state),
 });
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
