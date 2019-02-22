@@ -1,4 +1,4 @@
-import { RESET_STATE, SIGNIN_FAIL, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
+import { RESET_STATE, SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
 
 const initialState = {
     email: "",
@@ -22,20 +22,20 @@ export default ( state = { ...initialState }, action) => {
     }
 
     case SIGNIN_SUCCESS: {
-        const { isSuccessful } = action;
         return {
             ...state,
             isLoading: false,
-            isSuccessful,
+            isSuccessful: true,
         };
     }
 
-    case SIGNIN_FAIL: {
+    case SIGNIN_FAILURE: {
         const { status, data: { title } } = action.payload;
 
         return{
             ...state,
             isLoading: false,
+            isSuccessful: false,
             message: title,
             status,
         };

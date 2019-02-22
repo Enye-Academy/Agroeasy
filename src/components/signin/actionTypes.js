@@ -20,7 +20,7 @@ export const SIGNIN_SUCCESS = "SIGNIN_SUCCESS";
  *
  * @type {String}
  */
-export const SIGNIN_FAIL = "SIGNIN_FAIL";
+export const SIGNIN_FAILURE = "SIGNIN_FAILURE";
 
 /**
  * Fired by the {@link actions.resetState resetState}

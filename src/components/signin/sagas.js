@@ -24,7 +24,7 @@ function* signinUser(action){
 
         if (response.ok) {
             const data = yield response.json();
-            yield effects.put(signinSuccess(true));
+            yield effects.put(signinSuccess());
             yield effects.put(setCookie(data));
 
         } else {

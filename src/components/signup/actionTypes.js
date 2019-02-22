@@ -20,7 +20,7 @@ export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
  *
  * @type {String}
  */
-export const SIGNUP_FAIL = "SIGNUP_FAIL";
+export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
 
 /**
  * Fired by the {@link actions.resetState resetState}

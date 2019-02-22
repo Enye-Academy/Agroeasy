@@ -61,8 +61,7 @@ class Signup extends React.Component {
         if (visible && isSuccessful) {
             this.setState({ visible: false });
             resetSignState();
-        }
-        if (signupError) {
+        } else if (signupError) {
             message.error(signinfailMessage,3)&&
             resetSignState();
         }

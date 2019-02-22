@@ -1,4 +1,4 @@
-import { RESET_STATE, SIGNUP_FAIL, SIGNUP_REQUEST, SIGNUP_SUCCESS } from './actionTypes';
+import { RESET_STATE, SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from './actionTypes';
 
 /**
  * Triggers request to sign up the user
@@ -19,8 +19,7 @@ export const signupRequest = payload => ({
  * @param { boolean} isSuccessful the success(true) state of signup
  * @return {Object} The {@link actionTypes.SIGNUP_SUCCESS SIGNUP_SUCCESS} action.
  */
-export const signupSuccess = isSuccessful => ({
-    isSuccessful,
+export const signupSuccess = () => ({
     type: SIGNUP_SUCCESS,
 }); 
 
@@ -34,7 +33,7 @@ export const signupSuccess = isSuccessful => ({
  */
 export const signupFail = payload => ({
     payload,
-    type: SIGNUP_FAIL,
+    type: SIGNUP_FAILURE,
 });
 
 /**

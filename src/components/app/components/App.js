@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
     user: getUserData(state),
 });
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps)(App);

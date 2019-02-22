@@ -44,10 +44,11 @@ const items = [
 class Navbar extends React.Component {
 
     logout = ({ key }) => {
-        const { removeCookie, resetSigninState } = this.props.actions;
         const { isLoggedIn } = this.props;
 
         if (isLoggedIn && key === SIGN_OUT) {
+            const { removeCookie, resetSigninState } = this.props.actions;
+
             removeCookie();
             message.info(VALID_SIGNOUT, 5);
             resetSigninState();

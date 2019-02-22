@@ -18,7 +18,7 @@ export const getIsLoading = state => state[NAME].isLoading;
  * @return {Object} the state message of signin if failed
  * {@link module:signin/constants::INITIAL_STATE constants::INITIAL_STATE}).
  */
-export const getSigninfailureMessage = state => state[NAME].message;
+export const getSigninFailureMessage = state => state[NAME].message;
 
 /**
  * Selects the <tt>status</tt> key.

@@ -1,4 +1,4 @@
-import { RESET_STATE, SIGNIN_FAIL, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
+import { RESET_STATE, SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
 
 /**
  * Triggers request to sign in a user
@@ -19,8 +19,7 @@ export const signinRequest = payload => ({
  * @param {boolean} isSuccessful returns true if isSuccessful else false.
  * @return {Object} The {@link actionTypes.SIGNIN_SUCCESS SIGNIN_SUCCESS} action.
  */
-export const signinSuccess = isSuccessful => ({
-    isSuccessful,
+export const signinSuccess = () => ({
     type: SIGNIN_SUCCESS,
 });
 
@@ -34,7 +33,7 @@ export const signinSuccess = isSuccessful => ({
  */
 export const signinFail = payload => ({
     payload,
-    type: SIGNIN_FAIL,
+    type: SIGNIN_FAILURE,
 });
 
 /**

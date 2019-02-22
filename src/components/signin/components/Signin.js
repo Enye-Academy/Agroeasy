@@ -9,7 +9,7 @@ import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
 import { 
     getIsLoading, 
-    getSigninfailureMessage, 
+    getSigninFailureMessage, 
     getSigninStatus, 
     getisSuccessful 
 } from '../selectors';
@@ -61,8 +61,7 @@ class Signin extends React.Component {
         if (visible && isSuccessful) {
             this.setState({ visible: false });
             resetSignState();
-        }
-        if (signinError) {
+        } else if (signinError) {
             message.error(signinfailMessage,3);
             resetSignState();
         }
@@ -98,7 +97,7 @@ const mapStateToProps = state => ({
     isLoading: getIsLoading(state),
     isSuccessful: getisSuccessful(state),
     signinError: getSigninStatus(state),
-    signinfailMessage: getSigninfailureMessage(state),
+    signinFailMessage: getSigninFailureMessage(state),
 });
 
 const mapDispatchToProps = dispatch => ({

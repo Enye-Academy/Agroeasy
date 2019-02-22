@@ -24,7 +24,7 @@ function* signupUser(action) {
 
         if(response.ok){
             const data = yield response.json();
-            yield effects.put(signupSuccess(true));
+            yield effects.put(signupSuccess());
             yield effects.put(setCookie(data));
         } else { 
             const data = yield response.json();
