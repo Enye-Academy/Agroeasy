@@ -6,6 +6,13 @@ import { DEFAULT_IMAGE, LIST_ITEM_CLASS, PRODUCER_PAGE } from '../constants';
 
 const { EDIT, LARGE, PRODUCT_ITEM, VERTICAL } = PRODUCER_PAGE;
 
+/**
+ * Helper function used to generate tags for the item meta descrition section.
+ *
+ * @function
+ * @param {Object} item - the current item
+ * @return {Array} - a list tag elements
+ */
 function createItemDescTags(item) {
     const { cost, quantity, type } = item;
     const tags = [

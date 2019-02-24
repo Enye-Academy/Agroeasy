@@ -1,13 +1,13 @@
 import _pick from 'lodash.pick';
 import mongodb from 'mongodb';
-import { INTERNAL_SERVER_ERROR, OK, getStatusText } from 'http-status-codes';
+import { INTERNAL_SERVER_ERROR, getStatusText } from 'http-status-codes';
 
 import CONSTANTS from './constants';
 import models from '../../db/models/';
 
 const { Product } = models;
 const { ObjectID } = mongodb;
-const { ADD_PRODUCT, DELETE_PRODUCT, CREATE_KEYS, UPDATE_PRODUCT } = CONSTANTS;
+const { CREATE_KEYS, PRODUCT_CREATED, PRODUCT_DELETED, PRODUCT_UPDATED } = CONSTANTS;
 
 export default {
     // finds all products in the db
@@ -20,6 +20,14 @@ export default {
         }
     },
 
+    /**
+     * Finds a list of items by a given producer id.
+     *
+     * @function
+     * @param {Object} req - the request object
+     * @param {Object} res - the response object
+     * @return {Object} - the response after processing the request
+     */
     getProductsByUserId: async(req, res) => {
         try {
             const data = await Product.find({ producerId: req.params.id });
@@ -30,6 +38,7 @@ export default {
                 .json({ error, message: getStatusText(INTERNAL_SERVER_ERROR), success: false });
         }
     },
+
     productCreate: async (req, res) => {
         try {
             const productData = _pick(req.body, CREATE_KEYS);
@@ -37,7 +46,7 @@ export default {
 
             await product.save();
 
-            return res.json({ data: product, message: ADD_PRODUCT, success: true });
+            return res.json({ data: product, message: PRODUCT_CREATED, success: true });
         } catch (err) {
             res.send({ err, success: false });
         }
@@ -48,7 +57,7 @@ export default {
         try {
             const { body, params: { id: _id } } =  req;
             await Product.findByIdAndRemove(_id, body);
-            return res.json({ message: DELETE_PRODUCT, success: true });
+            return res.json({ message: PRODUCT_DELETED, success: true });
         } catch (err) {
             res.send({ err, success: false });
         }
@@ -70,16 +79,26 @@ export default {
             const { body, params:{ productsId: _id } } = req;
             const data = await Product.findOneAndUpdate(_id, body, { new: true } );
 
-            return res.json ({ data, message: UPDATE_PRODUCT, success: true });
+            return res.json ({ data, message: PRODUCT_UPDATED, success: true });
         } catch (err) {
             res.send({ err, success: false });
         }
     },
+
+    /**
+     * Either updates an item or creates an entirely new item for a given producer.
+     *
+     * @function
+     * @param {Object} req - the request object
+     * @param {Object} res - the response object
+     * @return {Object} - the response after processing the request
+     */
     updateOrCreateItem: async(req, res) => {
         try {
             const { body: product } = req;
             const { _id, producerId } = product;
             let data;
+            let message;
 
             if (ObjectID.isValid(_id)) {
                 const filter = {
@@ -89,15 +108,20 @@ export default {
                         { producerId: { $eq: producerId } },
                     ],
                 };
-                data = await Product.updateOne(filter, product);
+
+                await Product.updateOne(filter, product);
+
+                data = product;
+                message = PRODUCT_UPDATED;
             } else {
-                // Redundant code to catch if user insert invalid '_id'
+                // Redundancy: deletes possible invalid/valid '_id'
                 delete product._id;
 
                 data = await Product.create(product);
+                message = PRODUCT_CREATED;
             }
 
-            res.json({ data, product, success: true });
+            return res.json({ data, message, success: true });
         } catch (error) {
             return res
                 .status(INTERNAL_SERVER_ERROR)

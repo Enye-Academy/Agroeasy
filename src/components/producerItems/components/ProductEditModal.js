@@ -14,12 +14,13 @@ import {
 const FormItem = Form.Item;
 const Option = Select.Option;
 const { COST, NAME, QUANTITY, TYPE } = MODAL_FIELDS;
+
 /**
  * Helper function used to generate input fields for `ProductEditForm`.
  * It makes sure that the title/name field is at the beginning of the edit form
+ * And creates unique input based on the field.
  *
  * @function
-
  * @param {Function} decorator - sets the appropriate rules and defaults on the
  * input field
  * @param {Object} productToEdit - the product details to edit
@@ -90,11 +91,16 @@ class ProductEditForm extends React.Component {
      */
     updateProductInfo = () => {
         const { form, productToEdit, updateProduct } = this.props;
+        const { resetFields, validateFields } = form;
 
-        form.validateFields((error, productValues ) => error ?
-            error :
-            updateProduct({ ...productToEdit, ...productValues })
-        );
+        validateFields((error, fieldValues) => {
+            if (!error) {
+                updateProduct({ ...productToEdit, ...fieldValues });
+                resetFields();
+            }
+
+            return error;
+        });
     }
 
     static getDerivedStateFromProps(props) {
