@@ -9,8 +9,12 @@ import ProductList from './ProductList';
 import ProductEditModal from './ProductEditModal';
 import { requestProductList, requestProductUpdate } from '../actions';
 import { getProductList } from '../selectors';
-import { DEFAULT_FIELD_VALUES } from '../constants';
+import { DEFAULT_FIELD_VALUES, PRODUCER_ITEM } from '../constants';
 
+const {
+    BUTTON: { TEXT, TYPE },
+    CONTAINER_CLASS,
+} = PRODUCER_ITEM;
 /**
  * React component used to display the list of producer products
  */
@@ -99,11 +103,11 @@ class ProducerItems extends React.Component {
         const { productList } = this.props;
 
         return (
-            <div className='item-list-container'>
+            <div className={CONTAINER_CLASS}>
                 <Button
                     onClick={() => this.openProductModal()}
                 >
-                    <Icon type="plus" />{'Add Item'}
+                    <Icon type={TYPE} />{TEXT}
                 </Button>
                 <ProductList
                     list={[...productList.values()]}

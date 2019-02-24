@@ -22,6 +22,15 @@ export const MODAL_FIELDS = {
 };
 
 /**@constant*/
+export const PRODUCER_ITEM = {
+    BUTTON: {
+        TEXT: 'Add Item',
+        TYPE: 'plus',
+    },
+    CONTAINER_CLASS: 'item-list-container',
+};
+
+/**@constant*/
 export const DEFAULT_FIELD_VALUES = {
     cost: 1000,
     description: '',

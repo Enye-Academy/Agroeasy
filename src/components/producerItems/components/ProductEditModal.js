@@ -96,7 +96,7 @@ class ProductEditForm extends React.Component {
         validateFields((error, fieldValues) => {
             if (!error) {
                 updateProduct({ ...productToEdit, ...fieldValues });
-                resetFields();
+                return resetFields();
             }
 
             return error;

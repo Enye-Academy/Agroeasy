@@ -15,9 +15,8 @@ const {
 
 router.get('/findAll', allProductsDetails);
 router.get('/producerId/:id', getProductsByUserId);
-// the end point to find products saved in database
 router.get('/:id', productDetails);
-// the end point to create product and save to database
+
 router.post('/create', productCreate);
 
 router.put('/update', updateOrCreateItem);

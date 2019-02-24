@@ -97,8 +97,7 @@ export default {
         try {
             const { body: product } = req;
             const { _id, producerId } = product;
-            let data;
-            let message;
+            let data, message;
 
             if (ObjectID.isValid(_id)) {
                 const filter = {
