@@ -16,7 +16,6 @@ const {
 class UserProfile extends React.Component {
     render() {
         const { path } = this.props.match;
-
         return(
             <Content className={BIG_CONTENT}>
                 <Layout className={BIG_LAYOUT}>

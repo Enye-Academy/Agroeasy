@@ -16,7 +16,7 @@ class TeamProfile extends React.Component {
             <List
                 dataSource={TEAM_INFO}
                 header={<h4 className={TEAM_HEADER}>{HEADER_TEXT}</h4>}
-                grid={{ column: 3, lg: 3, md: 1, sm: 1, xs: 1, xxl: 3 }}
+                grid={{ column: 7, lg: 3, md: 1, sm: 1, xs: 1, xxl: 3 }}
                 renderItem={({ description, name, photo, social_media }) => (
                     <List.Item>
                         <Card

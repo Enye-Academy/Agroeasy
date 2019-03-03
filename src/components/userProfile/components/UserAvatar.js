@@ -16,12 +16,9 @@ const {
 } = USER_PAGE;
 
 class UserAvatar extends React.Component {
-    
     render() {
-
         const { user } = this.props.userData.data;
         const { firstName, lastName, username } = user;
-
         const BASIC_INFOMATION = [
             { description: firstName, title: "First Name" },
             { description: lastName, title: "Last Name" },
@@ -41,7 +38,7 @@ class UserAvatar extends React.Component {
                         description={
                             BASIC_INFOMATION.map(({ description, title }) => (
                                 <div key={title} className={BASIC_INFO}>
-                                    <b>{title}</b>
+                                    <h4>{title}</h4>
                                     <div>{description}</div>
                                 </div>
                             ))

@@ -13,12 +13,9 @@ const {
 } = USER_PAGE;
 
 class UserInfo extends React.Component {
-
     render() {
-        
         const { user } = this.props.userData.data;
         const { address, city, country, email, phoneNumber } = user;
-
         const CONTACT = [
             { description: email, title: "Email" },
             { description: phoneNumber, title: "Phone" },
@@ -38,7 +35,7 @@ class UserInfo extends React.Component {
                     description={
                         CONTACT.map(contact => (
                             <div key={contact.title} className={DATA_TITLE}>
-                                <b>{contact.title}</b>
+                                <h4>{contact.title}</h4>
                                 <div>
                                     {contact.description}
                                 </div>
@@ -53,7 +50,7 @@ class UserInfo extends React.Component {
                     description={
                         LOCATION.map(location => (
                             <div key={location.title} className={DATA_TITLE}>
-                                <b>{location.title}</b>
+                                <h4>{location.title}</h4>
                                 <div>
                                     {location.description}
                                 </div>
