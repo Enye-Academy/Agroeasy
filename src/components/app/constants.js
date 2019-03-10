@@ -15,7 +15,6 @@ export const LOGO = {
     SOURCE: "/AgroeasyLogo.png",
 };
 
-/** @constant */
 export const NAVBAR = {
     MAIN_NAV: "main-nav",
     MARKET_TEXT: "Market",
@@ -34,7 +33,6 @@ export const PATHS = {
     SIGN_UP: '/signup',
 };
 
-/** @constant */
 export const USER_AVATAR = {
     CONTAINER: "avatar-container",
     ICON_TYPE: "user",
@@ -55,7 +53,7 @@ export const FOOTER_DATA = [{
 }, {
     header: 'About Us',
     items: [
-        { link: '/about', title: 'Who is Argo Easy?' },
+        { link: '/who-is-Agro-Esay/', title: 'Who is Argo Easy?' },
         { title: 'Our Mission' },
         { title: 'Our Customers' },
     ],
@@ -75,9 +73,3 @@ export const FOOTER_CLASSNAMES = {
     DYNAMIC_FOOTER: 'ant-col-xs-24 ant-col-sm-24 ant-col-md-6',
     ROW: 'ant-row',
 };
-
-export const VALID_SIGNOUT = "You have been signed out";
-
-export const SIGNIN_SUCCESS = "You have succesfully signed in";
-
-export const EXPIRATION = 86400000;

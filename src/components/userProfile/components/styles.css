@@ -57,7 +57,6 @@
 }
 .menu {
     height: 100%;
-    min-height: 550px;
     padding-top: 50px;
 }
 .sm-content {
@@ -83,4 +82,12 @@
 .avatar-card {
     margin: -7%;
     padding-top: 24px;
+}
+
+/* Producer */
+.product-item{
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 70px;
+    margin-bottom: 5px;
 }

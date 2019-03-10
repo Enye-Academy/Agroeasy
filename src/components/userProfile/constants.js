@@ -23,10 +23,12 @@ export const USER_PAGE = {
     STRINGS: {
         CENTER: 'center',
         DARK: 'dark',
+        FIRSTNAME: 'First Name',
         FLEX: 'flex',
         FOLDER: 'folder',
         INFO_CIRCLE: 'info-circle',
         INLINE: 'inline',
+        LASTNAME: 'Last Name',
         MESSAGE: 'message',
         NOTIFICATION: 'notification',
         ORIENTATION: 'left',
@@ -37,15 +39,21 @@ export const USER_PAGE = {
         SOLUTION: 'solution',
         SQUARE: 'square',
         START: 'start',
+        USERNAME: 'Username',
     },
     TEXTS: {
         ACCOUNT_INFO: 'Account Info',
+        ADDRESS: 'address',
         BASIC_INFO_TEXT: 'BASIC INFORMATION',
+        CITY: 'city',
         CONTACT_INFO_TEXT: 'CONTACT INFORMATION',
+        COUNTRY: 'country',
+        EMAIL: 'email',
         HELP: 'Help',
         LOCATION_INFO_TEXT: 'LOCATION',
         MESSAGES: 'Messages',
         NOTIFICATIONS: 'Notifications',
+        PHONE: 'phone',
         PURCHASES: 'Purchases',
         SAVED_ITEMS: 'Saved Items',
         SETTINGS: 'Settings',
@@ -74,7 +82,10 @@ export const SIDE_MENU_ITEMS = [
     { iconType: "message", label: "Messages" },
     { iconType: "notification", label: "Notifications" },
     { iconType: "shopping", label: "Purchases" },
-    { iconType: "folder", label: "Items", link: "/profile/items" },
+    { iconType: "folder", label: "Add Items", link: "/profile/items" },
     { iconType: "setting", label: "Settings" },
     { iconType: "solution", label: "Help" },
 ];
+
+export const USER_DATA_URL = "http://localhost:4000/account/signin/:id";
+export const NAME = "userprofile";

@@ -148,8 +148,4 @@ export const PRODUCTS = [
         value: "other",
     },
 ];
-
-export const SUCCESS = "success";
-export const FAIL = "fail";
-
 export const SIGNUP_URL = '/account/signup';

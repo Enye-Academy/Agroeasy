@@ -1,16 +1,30 @@
 import React from 'react';
 import { Card, Divider } from 'antd';
+import PropTypes from 'prop-types';
+import { USER_PAGE } from '../constants';
+import { connect } from 'react-redux';
 
-import { CONTACT, LOCATION, USER_PAGE } from '../constants';
+import { getUserData } from '../selectors';
 
 const { Meta } = Card;
 const {
     CLASSNAMES: { CARD_META, DATA_TITLE, HEADER_TITLE, INFO_CARD },
-    TEXTS: { CONTACT_INFO_TEXT, LOCATION_INFO_TEXT },
+    TEXTS: { ADDRESS, CITY, CONTACT_INFO_TEXT, COUNTRY, EMAIL, LOCATION_INFO_TEXT, PHONE },
 } = USER_PAGE;
 
-export default class UserInfo extends React.Component {
+class UserInfo extends React.Component {
     render() {
+        const { user } = this.props.userData.data;
+        const { address, city, country, email, phoneNumber } = user;
+        const CONTACT = [
+            { description: email, title: EMAIL },
+            { description: phoneNumber, title: PHONE },
+        ];
+        const LOCATION= [
+            { description: city, title: CITY },
+            { description: country, title: COUNTRY },
+            { description: address, title: ADDRESS },
+        ];
         return (
             <Card
                 className={INFO_CARD}
@@ -21,7 +35,7 @@ export default class UserInfo extends React.Component {
                     description={
                         CONTACT.map(contact => (
                             <div key={contact.title} className={DATA_TITLE}>
-                                <b>{contact.title}</b>
+                                <h4>{contact.title}</h4>
                                 <div>
                                     {contact.description}
                                 </div>
@@ -36,7 +50,7 @@ export default class UserInfo extends React.Component {
                     description={
                         LOCATION.map(location => (
                             <div key={location.title} className={DATA_TITLE}>
-                                <b>{location.title}</b>
+                                <h4>{location.title}</h4>
                                 <div>
                                     {location.description}
                                 </div>
@@ -48,3 +62,13 @@ export default class UserInfo extends React.Component {
         );
     }
 }
+
+UserInfo.propTypes = {
+    userData: PropTypes.object,
+};
+
+const mapStateToProps = state => ({
+    userData: getUserData(state),
+});
+
+export default connect(mapStateToProps)(UserInfo);
