@@ -41,7 +41,7 @@ class UserAvatar extends React.Component {
                         description={
                             BASIC_INFOMATION.map(({ description, title }) => (
                                 <div key={title} className={BASIC_INFO}>
-                                    <b>{title}</b>
+                                    <h4>{title}</h4>
                                     <div>{description}</div>
                                 </div>
                             ))

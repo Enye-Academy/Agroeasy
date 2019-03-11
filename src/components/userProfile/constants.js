@@ -23,7 +23,7 @@ export const USER_PAGE = {
     STRINGS: {
         ADDRESS: 'Address',
         CENTER: 'center',
-        CITY: "City",
+        CITY: 'City',
         COUNTRY: 'Country',
         DARK: 'dark',
         EMAIL: 'Email',
@@ -44,7 +44,7 @@ export const USER_PAGE = {
         SOLUTION: 'solution',
         SQUARE: 'square',
         START: 'start',
-        USERNAME: 'Usermane',
+        USERNAME: 'Uaername',
     },
     TEXTS: {
         ACCOUNT_INFO: 'Account Info',
