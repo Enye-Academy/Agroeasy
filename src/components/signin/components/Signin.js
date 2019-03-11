@@ -1,20 +1,16 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { message } from 'antd';
 
 import SigninForm from './SigninForm';
 import { SIGNIN_STRINGS } from '../constants';
 import * as signinActions from '../actions';
-import {
-    getIsLoading,
-    getSigninFailureMessage,
-    getSigninStatus,
-    getisSuccessful
-} from '../selectors';
+import * as  signinSelectors from '../selectors';
 
-const { PRIMARY, TITLE } = SIGNIN_STRINGS;
+const { getData, getStatus } = signinSelectors;
+const { PRIMARY, SUCCESS, SUCCESS_MESSAGE, TITLE } = SIGNIN_STRINGS;
 
 class Signin extends React.Component {
     state = {
@@ -26,10 +22,7 @@ class Signin extends React.Component {
     }
 
     handleCancel = () => {
-        const { resetSignState } = this.props.actions;
-        
         this.setState({ visible: false });
-        resetSignState();
     }
 
     handleCreate = () => {
@@ -45,33 +38,27 @@ class Signin extends React.Component {
                 password,
             };
             signinRequest(payload);
-        });
+            this.setState({ visible: false });
+        }); 
     }
 
     saveFormRef = formRef => {
         this.formRef = formRef;
     }
 
-    componentDidUpdate(){
-        const {
-            isSuccessful,
-            actions: { resetSignState },
-            signinFailMessage,
-            signinError,
-        } = this.props;
-        const { visible } = this.state;
-
-        if (visible && isSuccessful) {
-            this.setState({ visible: false });
-            resetSignState();
-        } else if (signinError) {
-            message.error(signinFailMessage,3);
-            resetSignState();
+    componentDidUpdate() {
+        const { resetSignState } = this.props.actions;
+        const { signinStatus, siginData } = this.props;
+        
+        if(signinStatus !== undefined){
+            signinStatus === SUCCESS ? 
+                message.success(`${siginData.user.firstName}  ${SUCCESS_MESSAGE}`, 5):          
+                message.error(siginData.title, 5);
         }
+        resetSignState();
     }
-
-    render() {
-        const { isLoading } = this.props;
+    
+    render() {    
         return (
             <div>
                 <div type={PRIMARY} onClick={this.showModal}>{TITLE}</div>
@@ -80,7 +67,6 @@ class Signin extends React.Component {
                     visible={this.state.visible}
                     onCancel={this.handleCancel}
                     onCreate={this.handleCreate}
-                    isLoading={isLoading}
                 />
             </div>
         );
@@ -89,18 +75,12 @@ class Signin extends React.Component {
 
 Signin.propTypes = {
     actions: PropTypes.object,
-    isLoading: PropTypes.bool,
-    isSuccessful:PropTypes.bool,
     siginData: PropTypes.object,
-    signinError: PropTypes.string,
-    signinFailMessage: PropTypes.string,
+    signinStatus: PropTypes.string,
 };
-
 const mapStateToProps = state => ({
-    isLoading: getIsLoading(state),
-    isSuccessful: getisSuccessful(state),
-    signinError: getSigninStatus(state),
-    signinFailMessage: getSigninFailureMessage(state),
+    siginData: getData(state),
+    signinStatus: getStatus(state),
 });
 
 const mapDispatchToProps = dispatch => ({

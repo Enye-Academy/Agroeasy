@@ -58,7 +58,7 @@
 }
 
 /*
- this is for Navbar.js and home.js
+ this is for Navibar.js and home.js
   */
 .main-nav {
     position: fixed;
@@ -66,9 +66,8 @@
     z-index: 1;
 }
 
-.right-nav-menu {
+.nav-menu {
     position: relative;
-    float: left;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -81,23 +80,11 @@
     width: 55px;
 }
 
-.left-nav-menu {
-    position: relative;
-    float: right;
-    top: 50%;
-    transform: translateY(-50%);
-}
 .user-avatar-drop-down {
-    background-color: #f56a00;
     float: right;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 30px;
+    background-color: #f56a00;
 }
-@media only screen and (max-width: 700px) {
-    .ant-menu-dark{
-        margin-left: -15%;
-    }
-  }
 
 .bg-img{
     background-image:

@@ -1,15 +1,16 @@
 import { RESET_STATE, SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from './actionTypes';
 
 const initialState = {
+    data: {},
     email: "",
     error: null,
-    isLoading: null,
+    isLoading:false,
     password: "",
 };
 
 export default ( state = { ...initialState }, action) => {
 
-    switch (action.type) {
+    switch(action.type){
     case SIGNIN_REQUEST: {
         const { payload: { email, password } } = action;
         return {
@@ -21,22 +22,13 @@ export default ( state = { ...initialState }, action) => {
         };
     }
 
-    case SIGNIN_SUCCESS: {
+    case SIGNIN_SUCCESS:{
+        const { payload: { data, status } } = action;
         return {
             ...state,
+            data,
+            error: null,
             isLoading: false,
-            isSuccessful: true,
-        };
-    }
-
-    case SIGNIN_FAILURE: {
-        const { status, data: { title } } = action.payload;
-
-        return{
-            ...state,
-            isLoading: false,
-            isSuccessful: false,
-            message: title,
             status,
         };
     }
@@ -44,6 +36,16 @@ export default ( state = { ...initialState }, action) => {
     case RESET_STATE:
         return { ...initialState };
         
+    case SIGNIN_FAILURE:{
+        const { error } = action;
+        return {
+            ...state,
+            email: "",
+            error,
+            isLoading: false,
+            password: "",
+        };
+    }
     default:
         return state;
     }

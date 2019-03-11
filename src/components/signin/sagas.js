@@ -1,9 +1,10 @@
 import { effects } from 'redux-saga';
-import { setCookie } from '../app/actions';
 import {  SIGNIN_REQUEST } from './actionTypes';
 import { SIGNIN_URL } from './constants';
-import { signinSuccess, signinFail } from './actions';
+import { signinSuccess, signinFailure } from './actions';
+import userProfile from '../userProfile';
 
+const { fetchUserData } = userProfile.actions;
 /**
  * Makes a request to sign in a user
  *
@@ -21,19 +22,13 @@ function* signinUser(action){
             },
             method: 'POST',
         });
-
-        if (response.ok) {
+        if(response.ok){
             const data = yield response.json();
-            yield effects.put(signinSuccess());
-            yield effects.put(setCookie(data));
-
-        } else {
-            const data = yield response.json();
-            yield effects.put(signinFail(data));
+            yield effects.put(fetchUserData(data));
+            yield effects.put(signinSuccess(data));
         }
     } catch(error){
-        // eslint-disable-next-line no-console
-        console.log(error);
+        yield effects.put(signinFailure(error));
     }
 }
 /**
