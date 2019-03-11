@@ -11,7 +11,7 @@ const { Meta } = Card;
 const {
     CLASSNAMES: { AVATAR, AVATAR_CARD, BASIC_INFO, HEADER_TITLE },
     PROFILE_PIX,
-    STRINGS: { SQUARE },
+    STRINGS: { FIRSTNAME, LASTNAME, SQUARE, USERNAME },
     TEXTS: { BASIC_INFO_TEXT },
 } = USER_PAGE;
 
@@ -23,9 +23,9 @@ class UserAvatar extends React.Component {
         const { firstName, lastName, username } = user;
 
         const BASIC_INFOMATION = [
-            { description: firstName, title: "First Name" },
-            { description: lastName, title: "Last Name" },
-            { description: username, title: "Username" },
+            { description: firstName, title: FIRSTNAME },
+            { description: lastName, title: LASTNAME },
+            { description: username, title: USERNAME },
         ];
 
         return(
@@ -41,7 +41,7 @@ class UserAvatar extends React.Component {
                         description={
                             BASIC_INFOMATION.map(({ description, title }) => (
                                 <div key={title} className={BASIC_INFO}>
-                                    <b>{title}</b>
+                                    <h4>{title}</h4>
                                     <div>{description}</div>
                                 </div>
                             ))
