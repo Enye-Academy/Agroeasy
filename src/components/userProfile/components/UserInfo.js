@@ -9,13 +9,17 @@ import { getUserData } from '../selectors';
 const { Meta } = Card;
 const {
     CLASSNAMES: { CARD_META, DATA_TITLE, HEADER_TITLE, INFO_CARD },
-    TEXTS: { ADDRESS, CITY, CONTACT_INFO_TEXT, COUNTRY, EMAIL, LOCATION_INFO_TEXT, PHONE },
+    STRINGS: { ADDRESS, CITY, COUNTRY, EMAIL, PHONE },
+    TEXTS: { CONTACT_INFO_TEXT, LOCATION_INFO_TEXT },
 } = USER_PAGE;
 
 class UserInfo extends React.Component {
+
     render() {
+        
         const { user } = this.props.userData.data;
         const { address, city, country, email, phoneNumber } = user;
+
         const CONTACT = [
             { description: email, title: EMAIL },
             { description: phoneNumber, title: PHONE },
@@ -35,7 +39,7 @@ class UserInfo extends React.Component {
                     description={
                         CONTACT.map(contact => (
                             <div key={contact.title} className={DATA_TITLE}>
-                                <h4>{contact.title}</h4>
+                                <b>{contact.title}</b>
                                 <div>
                                     {contact.description}
                                 </div>
@@ -50,7 +54,7 @@ class UserInfo extends React.Component {
                     description={
                         LOCATION.map(location => (
                             <div key={location.title} className={DATA_TITLE}>
-                                <h4>{location.title}</h4>
+                                <b>{location.title}</b>
                                 <div>
                                     {location.description}
                                 </div>
